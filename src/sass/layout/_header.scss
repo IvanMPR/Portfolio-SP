@@ -1,0 +1,209 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+.main-virtual {
+  width: 100vw;
+  height: 1px;
+}
+.header {
+  width: 100vw;
+  min-height: 7rem;
+  background-color: var(--color-bg);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &-left {
+    display: flex;
+    align-items: center;
+
+    &__name {
+      font-size: var(--font-normal);
+      // padding-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-right: 2rem;
+    }
+
+    &__toggler {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      // background-color: var(--color-bg-offset);
+      position: relative;
+      cursor: pointer;
+
+      .fa-moon,
+      .fa-sun {
+        @include absoluteCenter;
+        font-size: var(--font-normal);
+        color: var(--color-text);
+      }
+
+      .fa-sun {
+        display: none;
+      }
+    }
+  }
+
+  &-menu {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--color-bg-offset);
+    position: relative;
+    padding-bottom: 0.5rem;
+    display: none;
+
+    &__checkbox {
+      display: none;
+    }
+
+    &__label {
+      @include absoluteCenter;
+      cursor: pointer;
+      width: 4rem;
+      height: 4rem;
+      background-color: var(--color-bg-offset);
+      border-radius: 50%;
+
+      &-bar {
+        cursor: pointer;
+        @include absoluteCenter;
+        &,
+        &::before,
+        &::after {
+          display: inline-block;
+          width: 2.5rem;
+          height: 2px;
+          background-color: var(--color-text);
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          transition: all 0.1s;
+        }
+
+        &::before {
+          top: -0.7rem;
+        }
+        &::after {
+          top: 0.7rem;
+        }
+      }
+
+      &:hover &-bar::before {
+        top: -0.9rem;
+      }
+      &:hover &-bar::after {
+        top: 0.9rem;
+      }
+    }
+
+    &__checkbox:checked + &__label &__label-bar {
+      background-color: transparent;
+    }
+    &__checkbox:checked + &__label &__label-bar::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+    &__checkbox:checked + &__label &__label-bar::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
+
+  &-right {
+    &__ul {
+      display: flex;
+    }
+
+    &__link-container:not(:last-child) {
+      margin-right: 2.5rem;
+    }
+
+    &__link:link,
+    &__link:visited {
+      position: relative;
+      color: var(--color-text);
+      font-size: var(--font-normal);
+      padding-bottom: 0.5rem;
+    }
+
+    &__link::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: -0.5rem;
+      width: 100%;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.5rem solid var(--color-bg-offset);
+      transform: scaleX(0);
+      transition: transform 0.25s ease-in-out;
+      z-index: -1;
+    }
+
+    &__link:hover::before {
+      transform: scaleX(1);
+    }
+
+    &__link-ordinal {
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-progress {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 3px;
+    background-color: var(--color-bg-offset);
+    background-color: var(--color-primary);
+  }
+
+  @include respond(phone) {
+    &-menu {
+      display: block;
+      margin-right: 2rem;
+    }
+
+    &-right {
+      display: none;
+    }
+  }
+
+  @include respond(tab-p) {
+    &-menu {
+      display: block;
+      margin-right: 2rem;
+    }
+    &-right {
+      display: none;
+    }
+  }
+
+  @include respond(tab-l) {
+    &-menu {
+      display: none;
+    }
+    &-right {
+      display: block;
+      margin-right: 2rem;
+    }
+  }
+}

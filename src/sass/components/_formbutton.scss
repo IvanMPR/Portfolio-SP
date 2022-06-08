@@ -1,0 +1,22 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+.btn__form {
+  border: none;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-l);
+  border-radius: 2px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--color-bg);
+    background: var(--color-primary-offset);
+  }
+}

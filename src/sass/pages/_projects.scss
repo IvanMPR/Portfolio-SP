@@ -1,0 +1,194 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+.projects-section {
+  // temporary
+  margin-bottom: 25rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .subtitle {
+      display: flex;
+      margin: 1rem auto 5rem;
+
+      &-icon {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      &-icon:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      .tech-icons {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .frame {
+    width: 100%;
+    min-height: 50rem;
+    position: relative;
+    // background-color: var(--color-bg-offset);
+    overflow: hidden;
+
+    .frame-arrow__left,
+    .frame-arrow__right {
+      position: absolute;
+      cursor: pointer;
+      color: var(--color-text);
+      transition: color 0.2s;
+      z-index: 100;
+    }
+
+    .frame-arrow__left {
+      top: 50%;
+      left: 0;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    .frame-arrow__right {
+      top: 50%;
+      right: 0;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    .dots-container {
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+    }
+    .dot {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      background: var(--color-text);
+      border-radius: 50%;
+      margin: 0 0.6rem;
+      opacity: 0.3;
+    }
+
+    .dot:hover {
+      cursor: pointer;
+    }
+
+    .dot-active {
+      opacity: 0.7;
+    }
+    // by increasing height of a frame div, description text remains visible on small screens
+    @include respond(phone) {
+      & {
+        min-height: 62rem;
+      }
+    }
+    @include respond(tab-p) {
+      & {
+        min-height: 62rem;
+      }
+    }
+  }
+
+  .project {
+    width: 100%;
+    border-radius: 1rem;
+    transition: all 0.3s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 10rem;
+
+    &-left,
+    &-right {
+      width: 48%;
+    }
+
+    &-left {
+      padding-left: 5rem;
+    }
+
+    &-left__image-container {
+      max-width: 48rem;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    &-left__image {
+      width: 100%;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    &-right {
+      padding-right: 5rem;
+      // height: 25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__title {
+        font-size: var(--font-l);
+        color: var(--color-text);
+      }
+
+      &__container {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+
+        &-link {
+          font-size: var(--font-normal);
+          color: var(--color-text);
+          border-bottom: 2px solid var(--color-primary);
+        }
+      }
+
+      &__demo {
+        margin-right: 5rem;
+      }
+      &__description {
+        color: var(--color-text);
+        font-size: var(--font-normal);
+      }
+    }
+
+    @include respond(phone) {
+      & {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &-right {
+        padding-right: 0;
+      }
+      &-left {
+        padding-left: 0;
+      }
+    }
+    @include respond(tab-p) {
+      & {
+        flex-direction: column;
+      }
+      &-right {
+        padding-right: 0;
+      }
+      &-left {
+        padding-left: 0;
+      }
+    }
+  }
+}

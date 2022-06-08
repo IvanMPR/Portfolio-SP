@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --main-font: 'Poppins', sans-serif;
+  --font-small: 1.3rem;
+  --font-normal: 1.6rem;
+  --font-l: 2rem;
+  --font-xl: 2.5rem;
+  --font-section-title: 3rem;
+  --font-menu: 4.5rem;
+  --font-xxl: 6rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--font-section-title);
+  color: var(--color-text);
+
+  &--icon {
+    color: var(--color-primary);
+    padding-left: 1.5rem;
+  }
+}

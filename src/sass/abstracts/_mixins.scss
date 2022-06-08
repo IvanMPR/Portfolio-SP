@@ -1,0 +1,47 @@
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Media Queries Manager
+/*
+  0 - 600px: Phone
+  600px - 900px: Tablet portrait
+  901px - 1200px: Tablet landscape
+  1201px - 1800px: ~ Lap-Top 15-inches(default styles)
+  1801px + : Big desktop
+  $breakpoint argument choices: 
+  - phone
+  - tab-p
+  - tab-l
+  - big-desk
+  1em = 16px
+ */
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-p {
+    @media (min-width: 37.51em) and (max-width: 56.25em) {
+      // 601px - 900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-l {
+    @media (min-width: 56.26em) and (max-width: 75em) {
+      // 901px - 1200x
+      @content;
+    }
+  }
+  @if $breakpoint == big-desk {
+    @media (min-width: 112.5em) {
+      // 1800px +
+      @content;
+    }
+  }
+}

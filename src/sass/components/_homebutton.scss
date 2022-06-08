@@ -1,0 +1,24 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+.btn {
+  text-transform: uppercase;
+  padding: 1rem 6rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  display: inline-block;
+  // position: relative;
+  // overflow: hidden;
+  color: var(--color-text);
+}
+
+.btn__contact {
+  background: var(--color-primary);
+  font-size: var(--font-l);
+  animation: moveInBottom 0.5s ease-out 0.75s backwards;
+
+  &:hover {
+    background: var(--color-primary-offset);
+    color: var(--color-bg);
+  }
+}

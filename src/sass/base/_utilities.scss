@@ -1,0 +1,41 @@
+.container {
+  max-width: 120rem;
+  margin: auto;
+  padding: 2rem;
+  // overflow: hidden;
+}
+
+.active {
+  border-bottom: 0.5rem solid var(--color-primary);
+}
+
+.box-shadow {
+  box-shadow: 0px 1rem 1rem -1rem rgba(13, 43, 90, 0.08);
+}
+
+.wrapper {
+  margin: 2rem 0;
+}
+
+.wrapper-l {
+  margin: 4rem 0;
+}
+
+.move-from-left {
+  animation: moveInLeft 1s ease-out;
+}
+
+.move-from-right {
+  animation: moveInRight 1s ease-out;
+}
+
+.add-width {
+  width: 100vw;
+  height: 100%;
+}
+
+// .separator {
+//   // width: 100%;
+//   // height: 10rem;
+//   // background-color: var(--color-bg-offset);
+// }

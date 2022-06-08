@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/main.07544d9b.css">
+    <script src="/src.e31bb0bc.js" type="module"></script>
+    <title>Ivan Portfolio</title>
+  <script src="/main.07544d9b.js"></script></head>
+  <body>
+    <div class="modal-container"></div>
+    <!-- TOP MENU(HIDDEN ON SCREENS > 900px) -->
+    <div class="top-menu">
+      <div class="top-menu__link-container">
+        <a href="#main" class="top-menu__a top-menu__links" title="Home section link">home</a>
+        <!-- <i class="fa-solid fa-house-user"></i> -->
+      </div>
+      <div class="top-menu__link-container">
+        <a href="#projects" class="top-menu__a top-menu__links" title="Projects section link">projects</a>
+        <!-- <i class="fa-solid fa-file"></i
+        > -->
+      </div>
+      <div class="top-menu__link-container">
+        <a href="#about" class="top-menu__a top-menu__links" title="About section link">about</a>
+        <!-- <i class="fa-solid fa-address-card"></i
+        > -->
+      </div>
+      <div class="top-menu__link-container">
+        <a href="#contact" class="top-menu__a top-menu__links" title="Contact section link">contact</a>
+        <!-- <i class="fa-solid fa-phone"></i
+        > -->
+      </div>
+    </div>
+    <!-- main virtual make page scroll all the way to the top -->
+    <div class="main-virtual" id="main"></div>
+    <!-- HEADER -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav-left">
+          <p class="nav-left__name">Ivan</p>
+          <div class="nav-left__toggler">
+            <i class="fa-solid fa-moon" title="Dark mode"></i>
+            <i class="fa-solid fa-sun" title="Light mode"></i>
+          </div>
+        </div>
+        <div class="nav-menu">
+          <input type="checkbox" class="nav-menu__checkbox" id="toggle">
+          <label class="nav-menu__label" for="toggle"><span class="nav-menu__label-bar">&nbsp;</span></label>
+          <!-- <div class="nav-menu__slide-in"></div> -->
+        </div>
+        <div class="nav-right">
+          <ul class="nav-right__ul">
+            <li class="nav-right__link-container">
+              <a href="#main" class="nav-right__link nav-right__link--home active"><span class="nav-right__link-ordinal">01</span>home</a>
+            </li>
+            <li class="nav-right__link-container">
+              <a href="#projects" class="nav-right__link nav-right__link--projects"><span class="nav-right__link-ordinal">02</span>projects</a>
+            </li>
+            <li class="nav-right__link-container">
+              <a href="#about" class="nav-right__link nav-right__link--about"><span class="nav-right__link-ordinal">03</span>about</a>
+            </li>
+            <li class="nav-right__link-container">
+              <a href="#contact" class="nav-right__link nav-right__link--contact"><span class="nav-right__link-ordinal">04</span>contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-progress"></div>
+      </nav>
+    </header>
+    <!-- HOME -->
+    <section class="container home">
+      <div class="home__main-h1">
+        <h1>
+          <span class="home__main-h1--small wrapper">
+            Hello, my name is Ivan Miceta
+          </span>
+          <span class="home__main-h1--big wrapper">
+            I'm self taught web developer
+          </span>
+        </h1>
+        <div class="home__main-btn wrapper-l">
+          <a href="#contact" class="btn btn__contact">Contact me</a>
+        </div>
+      </div>
+      <div class="home__main-image">
+        <svg viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main__blob">
+          <mask id="mask0" mask-type="alpha">
+            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+              130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+              97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+              0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"></path>
+          </mask>
+          <g mask="url(#mask0)">
+            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+              165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+              129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+              -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"></path>
+            <image class="main__blob-image" x="12" y="6" xlink:href="/Selfie-removebg-preview.1c381687.png"></image>
+          </g>
+        </svg>
+      </div>
+    </section>
+    <footer class="footer container">
+      <div class="footer__upper">
+        <div class="footer__social-icons wrapper">
+          <a href="https://github.com/IvanMPR" target="_blank"><i class="fab fa-github fa-3x" title="Link to my GitHub profile"></i></a>
+          <a href="https://www.linkedin.com/in/ivan-miceta-b74a9821b/" target="_blank"><i class="fab fa-linkedin fa-3x" title="Link to my LinkedIn profile"></i></a>
+          <a href="https://www.youtube.com/channel/UCVcSOSEFwBWzihRkBjzkdig/videos" target="_blank"><i class="fab fa-youtube fa-3x" title="Link to my YouTube channel"></i></a>
+        </div>
+        <!-------------------- test ------------------- -->
+        <div class="footer__scroll wrapper">
+          <!-- <i class="uil uil-mouse-alt"></i> -->
+          <i class="fa-solid fa-chevron-down"></i>
+          <p class="footer__scroll--p">Scroll down</p>
+          <i class="fa-solid fa-computer-mouse"></i>
+          <!-- <i class="uil uil-arrow-down"></i> -->
+        </div>
+        <!-------------------- test ------------------- -->
+        <!-- <div class="footer__cv-button wrapper">
+          <a
+            href="/cv/ОВЛАШЋЕЊЕ Мирослав Марковић.docx"
+            title="Download my CV"
+            download
+            >Download CV <i class="fas fa-download"></i
+          ></a>
+        </div>
+        <div class="footer__languages wrapper">
+          <a href="#" class="footer__languages--english normal-font"
+            ><img
+              src="img/flags/usa.svg"
+              alt="USA flag"
+              title="Click for English language"
+              class="footer__languages--english-flag"
+              alt="USA flag"
+          /></a>
+          <a href="#" class="footer__languages--serbian normal-font"
+            ><img
+              src="img/flags/srb.svg"
+              alt="SRB flag"
+              title="Click for Serbian language"
+              class="footer__languages--serbian-flag"
+              alt="Serbian flag"
+          /></a>
+        </div> -->
+        <div class="footer__codewars wrapper">
+          <a href="https://www.codewars.com/users/IvanMPR" target="_blank"><img src="https://www.codewars.com/users/IvanMPR/badges/small" title="Codewars rank and link to my profile" alt="Codewars badge"></a>
+        </div>
+      </div>
+      <!-- <div class="footer__lower wrapper">
+        <p class="footer__lower-licence">
+          Created by Ivan Miceta
+          <span class="footer__lower-copy">&copy;</span> Use for learning
+          purposes only
+        </p>
+      </div> -->
+    </footer>
+    <!-- <div class="separator">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#0099ff"
+          fill-opacity="1"
+          d="M0,160L80,144C160,128,320,96,480,117.3C640,139,800,213,960,234.7C1120,256,1280,224,1360,208L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        ></path>
+      </svg> 
+    </div>-->
+    <!-- PROJECTS -->
+    <section class="projects-section container" id="projects">
+      <h2 class="section__title wrapper">
+        Projects <i class="fas fa-user-cog section__title--icon"></i>
+      </h2>
+      <div class="projects-section__content wrapper-l">
+        <div class="subtitle">
+          <div class="subtitle-icon">
+            <img src="/html5.daefc513.png" alt="HTML5 icon" class="tech-icons">
+          </div>
+          <div class="subtitle-icon">
+            <img src="/css3.bfe5e988.png" alt="HTML5 icon" class="tech-icons">
+          </div>
+          <div class="subtitle-icon">
+            <img src="/js.ed9aef16.png" alt="HTML5 icon" class="tech-icons">
+          </div>
+          <div class="subtitle-icon">
+            <img src="/react.b4736c33.png" alt="HTML5 icon" class="tech-icons">
+          </div>
+          <div class="subtitle-icon">
+            <img src="/sass.8e073763.png" alt="HTML5 icon" class="tech-icons">
+          </div>
+          <div class="subtitle-icon">
+            <img src="/illustrator.1110b1b5.png" alt="HTML5 icon" class="tech-icons">
+          </div>
+        </div>
+        <div class="frame">
+          <div class="frame-arrow__left">
+            <i class="fas fa-chevron-left fa-5x" title="Previous project"></i>
+          </div>
+          <div class="frame-arrow__right">
+            <i class="fas fa-chevron-right fa-5x" title="Next project"></i>
+          </div>
+
+          <div class="project project-shootout">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/shooting.5b27563e.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">Shootout game</h3>
+              <div class="project-right__container">
+                <a href="https://ivanmpr.github.io/Whack-a-Mole/" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/Whack-a-Mole" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                Click on the Start button, and after short music intro, targets
+                will appear randomly on their spots. Earned points depends on
+                your precision. 'Green' circle is 'Bullseye', and it brings 12
+                points...
+              </p>
+            </div>
+          </div>
+
+          <div class="project project-quizz">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/flags.b0bcef36.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">Guess the Flag Quiz</h3>
+              <div class="project-right__container">
+                <a href="https://ivanmpr.github.io/Guess-the-Flag-FV/" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/Guess-the-Flag-FV" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                This is a fun quiz app where you can learn almost every flag
+                that is used in the world today! You can play in three different
+                languages...
+              </p>
+            </div>
+          </div>
+
+          <div class="project project-europe">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/map.63a38c47.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">European countries</h3>
+              <div class="project-right__container">
+                <a href="https://ivanmpr.github.io/Europe-Map-Project/" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/Europe-Map-Project" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                Click on the random country in the map of Europe and you will
+                get all basic data about that state in the container on the left
+                side of the screen...
+              </p>
+            </div>
+          </div>
+
+          <div class="project project-weather">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/weather.632a60d2.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">Weather app</h3>
+              <div class="project-right__container">
+                <a href="https://ivanmpr.github.io/Weather-app/" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/Weather-app" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                Weather app is responsive, and works behind the scene with two
+                third party API-s...
+              </p>
+            </div>
+          </div>
+
+          <div class="project project-memory">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/memory.1c72f5d3.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">Memory game</h3>
+              <div class="project-right__container">
+                <a href="https://ivanmpr.github.io/Memory-Game-Simple-Version/" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/Memory-Game-Simple-Version" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                There are 16 cards( 8 pairs in total ). Try to reveal all the
+                pairs with as few guesses as possible...
+              </p>
+            </div>
+          </div>
+          <div class="project project-calculator">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/calculator.93beb5e8.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">JS Calculator</h3>
+              <div class="project-right__container">
+                <a href="https://ivanmpr.github.io/Calculator/" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/Calculator" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                One of the JavaScript classics, calculator with button sounds
+              </p>
+            </div>
+          </div>
+          <div class="project project-counter">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/react-counter.bfe6e794.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">React counter</h3>
+              <div class="project-right__container">
+                <a href="https://ivanmpr.github.io/react-counter/" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/react-counter/tree/master" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                Starting slowly with React...
+              </p>
+            </div>
+          </div>
+          <div class="dots-container"></div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__upper">
+          <div class="footer__social-icons wrapper">
+            <a href="https://github.com/IvanMPR" target="_blank"><i class="fab fa-github fa-3x" title="Link to my GitHub profile"></i></a>
+            <a href="https://www.linkedin.com/in/ivan-miceta-b74a9821b/" target="_blank"><i class="fab fa-linkedin fa-3x" title="Link to my LinkedIn profile"></i></a>
+            <a href="https://www.youtube.com/channel/UCVcSOSEFwBWzihRkBjzkdig/videos" target="_blank"><i class="fab fa-youtube fa-3x" title="Link to my YouTube channel"></i></a>
+          </div>
+          <!-------------------- test ------------------- -->
+
+          <!-------------------- test ------------------- -->
+          <!-- <div class="footer__cv-button wrapper">
+            <a
+              href="/cv/ОВЛАШЋЕЊЕ Мирослав Марковић.docx"
+              title="Download my CV"
+              download
+              >Download CV <i class="fas fa-download"></i
+            ></a>
+          </div>
+          <div class="footer__languages wrapper">
+            <a href="#" class="footer__languages--english normal-font"
+              ><img
+                src="img/flags/usa.svg"
+                alt="USA flag"
+                title="Click for English language"
+                class="footer__languages--english-flag"
+                alt="USA flag"
+            /></a>
+            <a href="#" class="footer__languages--serbian normal-font"
+              ><img
+                src="img/flags/srb.svg"
+                alt="SRB flag"
+                title="Click for Serbian language"
+                class="footer__languages--serbian-flag"
+                alt="Serbian flag"
+            /></a>
+          </div> -->
+          <div class="footer__codewars wrapper">
+            <a href="https://www.codewars.com/users/IvanMPR" target="_blank"><img src="https://www.codewars.com/users/IvanMPR/badges/small" title="Codewars rank and link to my profile" alt="Codewars badge"></a>
+          </div>
+        </div>
+        <!-- <div class="footer__lower wrapper">
+          <p class="footer__lower-licence">
+            Created by Ivan Miceta
+            <span class="footer__lower-copy">&copy;</span> Use for learning
+            purposes only
+          </p>
+        </div> -->
+      </footer>
+    </section>
+    <!-- CONTACT -->
+    <section class="contact-section container" id="contact">
+      <h2 class="section__title wrapper">
+        Say hello <i class="far fa-hand-paper section__title--icon"></i>
+      </h2>
+      <div class="contact-section__content wrapper-l">
+        <div class="info wrapper">
+          <div class="info-div info-phone">
+            <i class="fa-solid fa-phone"></i>
+            <!-- <i class="uil uil-phone"></i> -->
+            <div class="info-p">+381638349870</div>
+          </div>
+          <div class="info-div info-email">
+            <!-- <i class="uil uil-envelope-alt"></i> -->
+            <i class="fa-solid fa-envelope"></i>
+            <div class="info-p">ivsanmas@gmail.com</div>
+          </div>
+          <div class="info-div info-location">
+            <!-- <i class="uil uil-map-marker"></i> -->
+            <i class="fa-solid fa-map-location-dot"></i>
+            <div class="info-p">Belgrade, Serbia</div>
+          </div>
+        </div>
+        <form class="form wrapper">
+          <div class="form__name wrapper form__mini-wrapper">
+            <label class="form__label" for="name">Name</label>
+            <input type="text" name="name" required="" class="form__input">
+          </div>
+          <div class="form__email wrapper form__mini-wrapper">
+            <label class="form__label" for="email">Email</label>
+            <input type="email" name="email" required="" class="form__input">
+          </div>
+
+          <div class="form__textarea wrapper form__mini-wrapper">
+            <label class="form__label" for="textarea">Message</label>
+            <textarea name="message" id="text-area-input" cols="30" rows="7" class="form__input" required=""></textarea>
+          </div>
+          <div class="form__submit-btn wrapper">
+            <button type="submit" class="btn__form">Submit</button>
+          </div>
+        </form>
+      </div>
+      <footer class="footer">
+        <div class="footer__upper">
+          <div class="footer__social-icons wrapper">
+            <a href="https://github.com/IvanMPR" target="_blank"><i class="fab fa-github fa-3x" title="Link to my GitHub profile"></i></a>
+            <a href="https://www.linkedin.com/in/ivan-miceta-b74a9821b/" target="_blank"><i class="fab fa-linkedin fa-3x" title="Link to my LinkedIn profile"></i></a>
+            <a href="https://www.youtube.com/channel/UCVcSOSEFwBWzihRkBjzkdig/videos" target="_blank"><i class="fab fa-youtube fa-3x" title="Link to my YouTube channel"></i></a>
+          </div>
+          <!-------------------- test ------------------- -->
+
+          <!-------------------- test ------------------- -->
+          <!-- <div class="footer__cv-button wrapper">
+            <a
+              href="/cv/ОВЛАШЋЕЊЕ Мирослав Марковић.docx"
+              title="Download my CV"
+              download
+              >Download CV <i class="fas fa-download"></i
+            ></a>
+          </div>
+          <div class="footer__languages wrapper">
+            <a href="#" class="footer__languages--english normal-font"
+              ><img
+                src="img/flags/usa.svg"
+                alt="USA flag"
+                title="Click for English language"
+                class="footer__languages--english-flag"
+                alt="USA flag"
+            /></a>
+            <a href="#" class="footer__languages--serbian normal-font"
+              ><img
+                src="img/flags/srb.svg"
+                alt="SRB flag"
+                title="Click for Serbian language"
+                class="footer__languages--serbian-flag"
+                alt="Serbian flag"
+            /></a>
+          </div> -->
+          <div class="footer__codewars wrapper">
+            <a href="https://www.codewars.com/users/IvanMPR" target="_blank"><img src="https://www.codewars.com/users/IvanMPR/badges/small" title="Codewars rank and link to my profile" alt="Codewars badge"></a>
+          </div>
+        </div>
+        <!-- <div class="footer__lower wrapper">
+          <p class="footer__lower-licence">
+            Created by Ivan Miceta
+            <span class="footer__lower-copy">&copy;</span> Use for learning
+            purposes only
+          </p>
+        </div> -->
+      </footer>
+    </section>
+  </body>
+</html>
+<!-- form!!! action="https://formsubmit.co/ivsanmas@gmail.com" method="POST"
+  -->
+<!-- input!!! name="_next" 
+  type="hidden"
+value="http://127.0.0.1:5500/pages/thanks/thanks.html"
+ -->
