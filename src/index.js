@@ -1,7 +1,13 @@
+import {
+  projectsCallback,
+  homeCallback,
+  contactCallback,
+} from './js modules/intersectionObservers.js';
+
 // Switching active class between links / event delegation
 // ------------------------------------- //
 const parentUl = document.querySelector('.nav-right__ul');
-const links = document.querySelectorAll('.nav-right__link');
+export const links = document.querySelectorAll('.nav-right__link');
 
 parentUl.addEventListener('click', function (e) {
   // return if clicked on blank space in the parentUl
@@ -23,7 +29,7 @@ parentUl.addEventListener('click', function (e) {
 });
 
 // scroll progress bar & box shadow on header element
-// ------------------------------------- //
+// --------------------------------------------------------------------- //
 const progressBarFiller = document.querySelector('.nav-progress');
 const header = document.querySelector('.header');
 
@@ -46,7 +52,7 @@ document.addEventListener('scroll', function () {
 });
 
 // toggling light/dark mode
-// ------------------------------------- //
+// ---------------------------------------------------------------------- //
 const toggleContainer = document.querySelector('.nav-left__toggler');
 const body = document.querySelector('body');
 
@@ -66,7 +72,7 @@ toggleContainer.addEventListener('click', function (e) {
 });
 
 // Show/hide navigation when clicked on hamburger menu on small screens
-// ------------------------------------- //
+// ---------------------------------------------------------------------- //
 const toggler = document.querySelector('#toggle');
 const topMenu = document.querySelector('.top-menu');
 
@@ -78,8 +84,10 @@ toggler.addEventListener('click', function () {
   }
 });
 
+// ------------------------------------------------------------------- //
 // Close hamburger menu when top menu link is clicked
-// ------------------------------------- //
+// ------------------------------------------------------------------- //
+
 topMenu.addEventListener('click', function (e) {
   if (!e.target.classList.contains('top-menu__a')) return;
 
@@ -87,7 +95,10 @@ topMenu.addEventListener('click', function (e) {
   this.style.top = '-22rem';
 });
 
+// ------------------------------------------------------------------- //
 // Close hamburger menu automatically if window is resized to more than 900px
+// ------------------------------------------------------------------- //
+
 window.addEventListener('resize', function () {
   const width = window.innerWidth;
   if (toggler.checked && width > 900) {
@@ -96,11 +107,13 @@ window.addEventListener('resize', function () {
   } else return;
 });
 
+// ------------------------------------------------------------------- //
 // projects gallery slider manipulation
-// ------------------------------------- //
+// ------------------------------------------------------------------- //
 const images = document.querySelectorAll('.project');
 const rightArrow = document.querySelector('.frame-arrow__right');
 const leftArrow = document.querySelector('.frame-arrow__left');
+const dotsContainer = document.querySelector('.dots-container');
 
 const data = {
   currentImage: 0,
@@ -113,8 +126,8 @@ function goToImage(imageNum) {
   );
 }
 goToImage(0);
+
 //  create dots under projects container
-const dotsContainer = document.querySelector('.dots-container');
 function createDots() {
   images.forEach((image, i) => {
     const html = `<span class="dot" data-image="${i}"></span>`;
@@ -122,6 +135,7 @@ function createDots() {
   });
 }
 createDots();
+
 // Add active class to current dot
 function activateDot(currSlide) {
   document
@@ -155,9 +169,10 @@ function moveLeft() {
   goToImage(data.currentImage);
 }
 
+// browse trough projects
 rightArrow.addEventListener('click', moveRight);
 leftArrow.addEventListener('click', moveLeft);
-
+// go to specific project by clicking on the dot
 dotsContainer.addEventListener('click', function (e) {
   if (!e.target.classList.contains('dot')) return;
   const imgNumber = e.target.dataset.image;
@@ -166,8 +181,9 @@ dotsContainer.addEventListener('click', function (e) {
   goToImage(imgNumber);
 });
 
+// ------------------------------------------------------------------- //
 // Open modal to zoom in the thumbnail project picture
-// ------------------------------------- //
+// ------------------------------------------------------------------- //
 const modalContainer = document.querySelector('.modal-container');
 const createModal = function (img) {
   const html = `<div class="modal__zoom--content add-width">
@@ -192,55 +208,45 @@ body.addEventListener('click', function (e) {
   if (!e.target.classList.contains('modal__zoom--content')) return;
   removeModal(modalContainer);
 });
-
+// ------------------------------------------------------------------- //
 // Add / remove active class on header links depending on scroll position
-// ------------------------------------- //
-const projectsCallback = function (entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      links.forEach(link => {
-        link.classList.remove('active');
-      });
-      document
-        .querySelector('.nav-right__link--projects')
-        .classList.add('active');
-    }
-  });
-};
+// ------------------------------------------------------------------- //
+// observer callback functions are located in the separate js module
 
-const projectsOptions = {
-  root: null,
-  threshold: 0.9,
-};
-const contactSection = document.querySelector('#contact');
-const projectsSection = document.querySelector('#projects');
 const homeSection = document.querySelector('#main');
+const projectsSection = document.querySelector('#projects');
+// const aboutSection = document.querySelector('#about');
+const contactSection = document.querySelector('#contact');
 
-const projectsObserver = new IntersectionObserver(
-  projectsCallback,
-  projectsOptions
-);
-projectsObserver.observe(projectsSection);
-const contactOptions = {
-  root: null,
-  threshold: 0.8,
-};
-const contactObserver = new IntersectionObserver(() => {
-  links.forEach(link => {
-    link.classList.remove('active');
-  });
-  document.querySelector('.nav-right__link--contact').classList.add('active');
-}, contactOptions);
-contactObserver.observe(contactSection);
+// home section --------------------------------------------------------//
 const homeOptions = {
   root: null,
   threshold: 0,
   // rootMargin: '350px',
 };
-const homeObserver = new IntersectionObserver(() => {
-  links.forEach(link => {
-    link.classList.remove('active');
-  });
-  document.querySelector('.nav-right__link--home').classList.add('active');
-}, homeOptions);
+const homeObserver = new IntersectionObserver(homeCallback, homeOptions);
 homeObserver.observe(homeSection);
+
+// projects section ----------------------------------------------------//
+const projectsOptions = {
+  root: null,
+  threshold: 0.9,
+};
+const projectsObserver = new IntersectionObserver(
+  projectsCallback,
+  projectsOptions
+);
+projectsObserver.observe(projectsSection);
+
+// contact section -----------------------------------------------------//
+const contactOptions = {
+  root: null,
+  threshold: 0.8,
+};
+const contactObserver = new IntersectionObserver(
+  contactCallback,
+  contactOptions
+);
+contactObserver.observe(contactSection);
+//  --------------------------------------------------------------------//
+

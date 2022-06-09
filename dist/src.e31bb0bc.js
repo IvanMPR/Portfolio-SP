@@ -117,11 +117,68 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"js modules/intersectionObservers.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.contactCallback = contactCallback;
+exports.homeCallback = homeCallback;
+exports.projectsCallback = projectsCallback;
+
+var _index = require("../index.js");
+
+function homeCallback(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      _index.links.forEach(function (link) {
+        link.classList.remove('active');
+      });
+
+      document.querySelector('.nav-right__link--home').classList.add('active');
+    }
+  });
+}
+
+function projectsCallback(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      _index.links.forEach(function (link) {
+        link.classList.remove('active');
+      });
+
+      document.querySelector('.nav-right__link--projects').classList.add('active');
+    }
+  });
+}
+
+function contactCallback(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      _index.links.forEach(function (link) {
+        link.classList.remove('active');
+      });
+
+      document.querySelector('.nav-right__link--contact').classList.add('active');
+    }
+  });
+}
+},{"../index.js":"index.js"}],"index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.links = void 0;
+
+var _intersectionObservers = require("./js modules/intersectionObservers.js");
+
 // Switching active class between links / event delegation
 // ------------------------------------- //
 var parentUl = document.querySelector('.nav-right__ul');
 var links = document.querySelectorAll('.nav-right__link');
+exports.links = links;
 parentUl.addEventListener('click', function (e) {
   // return if clicked on blank space in the parentUl
   if (e.target.classList.contains('nav-right__ul')) return; // logic for clicking on the 'span' element inside of the 'a' element
@@ -144,7 +201,7 @@ parentUl.addEventListener('click', function (e) {
     e.target.classList.add('active');
   }
 }); // scroll progress bar & box shadow on header element
-// ------------------------------------- //
+// --------------------------------------------------------------------- //
 
 var progressBarFiller = document.querySelector('.nav-progress');
 var header = document.querySelector('.header');
@@ -156,7 +213,7 @@ document.addEventListener('scroll', function () {
   percentage > 17 ? header.classList.add('box-shadow') : header.classList.remove('box-shadow');
   progressBarFiller.style.width = "".concat(percentage, "%");
 }); // toggling light/dark mode
-// ------------------------------------- //
+// ---------------------------------------------------------------------- //
 
 var toggleContainer = document.querySelector('.nav-left__toggler');
 var body = document.querySelector('body');
@@ -174,7 +231,7 @@ toggleContainer.addEventListener('click', function (e) {
     moonIcon.style.display = 'block';
   }
 }); // Show/hide navigation when clicked on hamburger menu on small screens
-// ------------------------------------- //
+// ---------------------------------------------------------------------- //
 
 var toggler = document.querySelector('#toggle');
 var topMenu = document.querySelector('.top-menu');
@@ -184,14 +241,17 @@ toggler.addEventListener('click', function () {
   } else {
     topMenu.style.top = '-22rem';
   }
-}); // Close hamburger menu when top menu link is clicked
-// ------------------------------------- //
+}); // ------------------------------------------------------------------- //
+// Close hamburger menu when top menu link is clicked
+// ------------------------------------------------------------------- //
 
 topMenu.addEventListener('click', function (e) {
   if (!e.target.classList.contains('top-menu__a')) return;
   toggler.checked = false;
   this.style.top = '-22rem';
-}); // Close hamburger menu automatically if window is resized to more than 900px
+}); // ------------------------------------------------------------------- //
+// Close hamburger menu automatically if window is resized to more than 900px
+// ------------------------------------------------------------------- //
 
 window.addEventListener('resize', function () {
   var width = window.innerWidth;
@@ -200,12 +260,14 @@ window.addEventListener('resize', function () {
     toggler.checked = false;
     topMenu.style.top = '-22rem';
   } else return;
-}); // projects gallery slider manipulation
-// ------------------------------------- //
+}); // ------------------------------------------------------------------- //
+// projects gallery slider manipulation
+// ------------------------------------------------------------------- //
 
 var images = document.querySelectorAll('.project');
 var rightArrow = document.querySelector('.frame-arrow__right');
 var leftArrow = document.querySelector('.frame-arrow__left');
+var dotsContainer = document.querySelector('.dots-container');
 var data = {
   currentImage: 0,
   threshold: images.length - 1
@@ -218,8 +280,6 @@ function goToImage(imageNum) {
 }
 
 goToImage(0); //  create dots under projects container
-
-var dotsContainer = document.querySelector('.dots-container');
 
 function createDots() {
   images.forEach(function (image, i) {
@@ -259,18 +319,21 @@ function moveLeft() {
 
   activateDot(data.currentImage);
   goToImage(data.currentImage);
-}
+} // browse trough projects
+
 
 rightArrow.addEventListener('click', moveRight);
-leftArrow.addEventListener('click', moveLeft);
+leftArrow.addEventListener('click', moveLeft); // go to specific project by clicking on the dot
+
 dotsContainer.addEventListener('click', function (e) {
   if (!e.target.classList.contains('dot')) return;
   var imgNumber = e.target.dataset.image;
   data.currentImage = Number(imgNumber);
   activateDot(imgNumber);
   goToImage(imgNumber);
-}); // Open modal to zoom in the thumbnail project picture
-// ------------------------------------- //
+}); // ------------------------------------------------------------------- //
+// Open modal to zoom in the thumbnail project picture
+// ------------------------------------------------------------------- //
 
 var modalContainer = document.querySelector('.modal-container');
 
@@ -293,53 +356,38 @@ thumbnailsParentDiv.addEventListener('click', function (e) {
 body.addEventListener('click', function (e) {
   if (!e.target.classList.contains('modal__zoom--content')) return;
   removeModal(modalContainer);
-}); // Add / remove active class on header links depending on scroll position
-// ------------------------------------- //
+}); // ------------------------------------------------------------------- //
+// Add / remove active class on header links depending on scroll position
+// ------------------------------------------------------------------- //
+// observer callback functions are located in the separate js module
 
-var projectsCallback = function projectsCallback(entries, observer) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      links.forEach(function (link) {
-        link.classList.remove('active');
-      });
-      document.querySelector('.nav-right__link--projects').classList.add('active');
-    }
-  });
-};
-
-var projectsOptions = {
-  root: null,
-  threshold: 0.9
-};
-var contactSection = document.querySelector('#contact');
-var projectsSection = document.querySelector('#projects');
 var homeSection = document.querySelector('#main');
-var projectsObserver = new IntersectionObserver(projectsCallback, projectsOptions);
-projectsObserver.observe(projectsSection);
-var contactOptions = {
-  root: null,
-  threshold: 0.8
-};
-var contactObserver = new IntersectionObserver(function () {
-  links.forEach(function (link) {
-    link.classList.remove('active');
-  });
-  document.querySelector('.nav-right__link--contact').classList.add('active');
-}, contactOptions);
-contactObserver.observe(contactSection);
+var projectsSection = document.querySelector('#projects'); // const aboutSection = document.querySelector('#about');
+
+var contactSection = document.querySelector('#contact'); // home section --------------------------------------------------------//
+
 var homeOptions = {
   root: null,
   threshold: 0 // rootMargin: '350px',
 
 };
-var homeObserver = new IntersectionObserver(function () {
-  links.forEach(function (link) {
-    link.classList.remove('active');
-  });
-  document.querySelector('.nav-right__link--home').classList.add('active');
-}, homeOptions);
-homeObserver.observe(homeSection);
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var homeObserver = new IntersectionObserver(_intersectionObservers.homeCallback, homeOptions);
+homeObserver.observe(homeSection); // projects section ----------------------------------------------------//
+
+var projectsOptions = {
+  root: null,
+  threshold: 0.9
+};
+var projectsObserver = new IntersectionObserver(_intersectionObservers.projectsCallback, projectsOptions);
+projectsObserver.observe(projectsSection); // contact section -----------------------------------------------------//
+
+var contactOptions = {
+  root: null,
+  threshold: 0.8
+};
+var contactObserver = new IntersectionObserver(_intersectionObservers.contactCallback, contactOptions);
+contactObserver.observe(contactSection); //  --------------------------------------------------------------------//
+},{"./js modules/intersectionObservers.js":"js modules/intersectionObservers.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
