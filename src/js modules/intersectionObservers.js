@@ -36,3 +36,13 @@ export function contactCallback(entries) {
     }
   });
 }
+export function aboutCallback(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(link => {
+        link.classList.remove('active');
+      });
+      document.querySelector('.nav-right__link--about').classList.add('active');
+    }
+  });
+}
