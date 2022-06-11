@@ -2,6 +2,7 @@ import {
   projectsCallback,
   homeCallback,
   contactCallback,
+  aboutCallback,
 } from './js modules/intersectionObservers.js';
 
 // Switching active class between links / event delegation
@@ -215,7 +216,7 @@ body.addEventListener('click', function (e) {
 
 const homeSection = document.querySelector('#main');
 const projectsSection = document.querySelector('#projects');
-// const aboutSection = document.querySelector('#about');
+const aboutSection = document.querySelector('#about');
 const contactSection = document.querySelector('#contact');
 
 // home section --------------------------------------------------------//
@@ -249,4 +250,9 @@ const contactObserver = new IntersectionObserver(
 );
 contactObserver.observe(contactSection);
 //  --------------------------------------------------------------------//
-
+const aboutOptions = {
+  root: null,
+  threshold: 0.8,
+};
+const aboutObserver = new IntersectionObserver(aboutCallback, aboutOptions);
+aboutObserver.observe(aboutSection);

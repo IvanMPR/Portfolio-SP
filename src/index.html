@@ -13,6 +13,8 @@
     <title>Ivan Portfolio</title>
   </head>
   <body>
+ 
+    <svg class="svg-test" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f7f7f9" fill-opacity="0.4" d="M0,288L60,293.3C120,299,240,309,360,288C480,267,600,213,720,208C840,203,960,245,1080,261.3C1200,277,1320,267,1380,261.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
     <div class="modal-container"></div>
     <!-- TOP MENU(HIDDEN ON SCREENS > 900px) -->
     <div class="top-menu">
@@ -241,8 +243,11 @@
         ></path>
       </svg> 
     </div>-->
+    <svg class="upper" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f7f7f9" fill-opacity="1" d="M0,288L60,293.3C120,299,240,309,360,288C480,267,600,213,720,208C840,203,960,245,1080,261.3C1200,277,1320,267,1380,261.3L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
     <!-- PROJECTS -->
+    
     <section class="projects-section container" id="projects">
+      
       <h2 class="section__title wrapper">
         Projects <i class="fas fa-user-cog section__title--icon"></i>
       </h2>
@@ -628,35 +633,66 @@
         <a href="#" class="btn btn__cv">Download CV</a>
       </div>
       <div class="about-section__content wrapper-l">
-        <div class="intro wrapper container">
-          <p class="intro__para">
+        <div class="about-intro wrapper">
+          <p class="about-intro__para">
             Hello and welcome, I'm Ivan Miceta from Belgrade, Serbia, and I'm
             self taught web developer. On this page you can get familiar with my
             developer skills, resources I used while learning and detailed
             biography.
           </p>
-          <p class="intro__para">
+          <p class="about-intro__para">
             In the spring of 2020, I decided to invest time end effort to start
             learning web development. That road was hard, sometimes painful, and
             just one simple thing kept me moving forward.
           </p>
-          <p class="intro__para">I fell in love with coding.</p>
-          <p class="intro__para">
+          <p class="about-intro__para">I fell in love with coding.</p>
+          <p class="about-intro__para">
             The joy and satisfaction felt when I solved 'FizzBuzz' challenge,
             when my first project appeared online on Github, or CodeWars problem
             solved was overwhelming and contagious.
           </p>
-          <p class="intro__para">
+          <p class="about-intro__para">
             It superseded, by far, all frustrations, disappointments, doubts and
             obstacles that are present and inevitable when trying to learn such
             a complex and vast topic such as a programming language.
           </p>
-          <p class="intro__para">
+          <p class="about-intro__para">
             I sincerely hope that after reviewing this portfolio, you will find
             my time well spent and my self-proclaimed 'title' of web developer
             is not undeserved.
           </p>
         </div>
+        <div class="about__skills container" id="skills">
+          <div class="about__skills--html">
+            <span class="skill-icon"><img class="skill-icon-svg" src="./images/svg/html5.svg" title="html icon" alt="html icon"></i></span>
+            <div class="skill-bar">
+              <div class="skill-bar-inner inner-html"></div>
+            </div>
+          </div>
+          <div class="about__skills--css">
+            <span class="skill-icon"><img class="skill-icon-svg" src="./images/svg/css3.svg" title="css icon" alt="css icon"></span>
+            <div class="skill-bar">
+              <div class="skill-bar-inner inner-css"></div>
+            </div>
+          </div>
+          <div class="about__skills--js">
+            <span class="skill-icon"><img class="skill-icon-svg" src="./images/svg/js.svg" title="javascript icon" alt="javascript icon"></span>
+            <div class="skill-bar">
+              <div class="skill-bar-inner inner-js"></div>
+            </div>
+          </div>
+          <div class="about__skills--sass">
+            <span class="skill-icon"><img class="skill-icon-svg" src="./images/svg/sass.svg" title="sass icon" alt="sass icon"></span>
+            <div class="skill-bar">
+              <div class="skill-bar-inner inner-sass"></div>
+            </div>
+          </div>
+          <div class="about__skills--ai">
+            <span class="skill-icon"><img class="skill-icon-svg" src="./images/svg/illustrator.svg" title="illustrator icon" alt="ai icon" ></span>
+            <div class="skill-bar">
+              <div class="skill-bar-inner inner-ai"></div>
+            </div>
+          </div>
       </div>
     </section>
     <!-- CONTACT -->

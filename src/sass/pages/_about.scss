@@ -4,3 +4,100 @@
 .btn-wrapper {
   text-align: center;
 }
+
+.about-section__content {
+  display: flex;
+  align-items: center;
+
+  .about-intro {
+    width: 45%;
+    // margin: auto;
+    // text-align: center;
+    // background-color: var(--color-test);
+
+    &__para {
+      // color: $color-text-offset;
+      // font-size: $font-normal;
+      color: var(--color-text);
+      font-size: var(--font-normal);
+      width: 100%;
+      text-align: justify;
+      margin: 2rem 0;
+    }
+  }
+
+  .about__skills,
+  .about__personal {
+    width: 45%;
+  }
+
+  .about__skills {
+    padding-top: 5rem;
+    .skill-icon {
+      display: inline-block;
+
+      &-svg {
+        width: 3.3rem;
+      }
+    }
+    // skill level bars
+    .inner-html {
+      width: 85%;
+    }
+    .inner-css {
+      width: 85%;
+    }
+    .inner-js {
+      width: 90%;
+    }
+    .inner-sass {
+      width: 80%;
+    }
+    .inner-ai {
+      width: 95%;
+    }
+
+    &--html {
+      padding-top: 3rem;
+      // border-top: 1px solid $color-text-offset;
+      border-top: 1px solid var(--color-text-offset);
+    }
+    &--ai {
+      padding-bottom: 3rem;
+      // border-bottom: 1px solid $color-text-offset;
+      border-bottom: 1px solid var(--color-text-offset);
+    }
+
+    &--html,
+    &--css,
+    &--js,
+    &--sass,
+    &--ai {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+
+    .skill-bar {
+      width: 70%;
+      height: 1rem;
+
+      background: var(--color-bg-offset);
+      display: flex;
+      align-items: center;
+
+      &-inner {
+        height: 0.5rem;
+
+        background-image: linear-gradient(
+          to right,
+          var(--color-primary),
+          var(--color-bg)
+        );
+        background-size: 400%;
+      }
+    }
+  }
+}

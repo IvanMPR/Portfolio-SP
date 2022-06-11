@@ -123,6 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.aboutCallback = aboutCallback;
 exports.contactCallback = contactCallback;
 exports.homeCallback = homeCallback;
 exports.projectsCallback = projectsCallback;
@@ -161,6 +162,18 @@ function contactCallback(entries) {
       });
 
       document.querySelector('.nav-right__link--contact').classList.add('active');
+    }
+  });
+}
+
+function aboutCallback(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      _index.links.forEach(function (link) {
+        link.classList.remove('active');
+      });
+
+      document.querySelector('.nav-right__link--about').classList.add('active');
     }
   });
 }
@@ -362,8 +375,8 @@ body.addEventListener('click', function (e) {
 // observer callback functions are located in the separate js module
 
 var homeSection = document.querySelector('#main');
-var projectsSection = document.querySelector('#projects'); // const aboutSection = document.querySelector('#about');
-
+var projectsSection = document.querySelector('#projects');
+var aboutSection = document.querySelector('#about');
 var contactSection = document.querySelector('#contact'); // home section --------------------------------------------------------//
 
 var homeOptions = {
@@ -387,6 +400,13 @@ var contactOptions = {
 };
 var contactObserver = new IntersectionObserver(_intersectionObservers.contactCallback, contactOptions);
 contactObserver.observe(contactSection); //  --------------------------------------------------------------------//
+
+var aboutOptions = {
+  root: null,
+  threshold: 0.8
+};
+var aboutObserver = new IntersectionObserver(_intersectionObservers.aboutCallback, aboutOptions);
+aboutObserver.observe(aboutSection);
 },{"./js modules/intersectionObservers.js":"js modules/intersectionObservers.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -415,7 +435,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55651" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51469" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
