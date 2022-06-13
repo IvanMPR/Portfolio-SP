@@ -249,7 +249,7 @@ const contactObserver = new IntersectionObserver(
   contactOptions
 );
 contactObserver.observe(contactSection);
-//  --------------------------------------------------------------------//
+// about section --------------------------------------------------------------------//
 const aboutOptions = {
   root: null,
   threshold: 0.8,

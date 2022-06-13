@@ -4,7 +4,7 @@
 .home {
   margin-top: 17rem;
   margin-bottom: 15rem;
-
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -148,8 +148,10 @@
   //       height: 45rem;
   //     }
   //   }
-}
-
-.wave {
-  width: 100%;
+  &-bottom__svg {
+    position: absolute;
+    top: 40%;
+    z-index: -1;
+    width: 100vw;
+  }
 }

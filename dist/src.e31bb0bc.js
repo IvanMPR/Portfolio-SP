@@ -399,7 +399,7 @@ var contactOptions = {
   threshold: 0.8
 };
 var contactObserver = new IntersectionObserver(_intersectionObservers.contactCallback, contactOptions);
-contactObserver.observe(contactSection); //  --------------------------------------------------------------------//
+contactObserver.observe(contactSection); // about section --------------------------------------------------------------------//
 
 var aboutOptions = {
   root: null,
@@ -435,7 +435,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51469" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49827" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
