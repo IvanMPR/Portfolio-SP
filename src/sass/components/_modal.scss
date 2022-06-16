@@ -33,9 +33,4 @@
       width: calc(100vw - 10rem);
     }
   }
-  @include respond(tab-l) {
-    .zoomed-img {
-      width: 75vw;
-    }
-  }
 }
