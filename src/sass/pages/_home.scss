@@ -52,48 +52,43 @@
 
   &__main-image {
     width: 43rem;
-    height: 43rem;
+    // height: 43rem;
   }
 
   .main__blob {
-    // width: 40rem;
-    margin-top: 2.5rem;
-    fill: white;
+    width: 100%;
+    // margin-top: 2.5rem;
+    // fill: white;
 
-    &-image {
-      width: 100%;
-      height: 20rem;
-    }
+    // &-image {
+    //   width: 100%;
+    //   height: 20rem;
+    // }
   }
 
-  //   @include respond(phone) {
-  //     & {
-  //       flex-direction: column;
-  //       margin-top: 4rem;
-  //       margin-bottom: 4rem;
-  //     }
-  //     &__h1 {
-  //       margin-bottom: 3rem;
-  //     }
+  @include respond(phone) {
+    & {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 12rem;
+      margin-bottom: 4rem;
+    }
+    &__main-h1 {
+      margin-bottom: 4rem;
+    }
 
-  //     &__image {
-  //       width: 38rem;
-  //       height: 38rem;
-  //       margin-right: auto;
-  //     }
+    &__main-image {
+      width: 38rem;
+      height: 38rem;
+    }
 
-  //     &__blob {
-  //       // width: 40rem;
-  //       margin-top: 2rem;
-  //       fill: white;
-  //       align-self: flex-start;
+    .main__blob {
+      // width: 40rem;
+      margin-top: 2rem;
 
-  //       &-image {
-  //         // width: 100%;
-  //         height: 20rem;
-  //       }
-  //     }
-  //   }
+      align-self: flex-start;
+    }
+  }
 
   //   @include respond(tab-p) {
   //     & {
