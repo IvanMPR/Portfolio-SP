@@ -19,6 +19,23 @@
   .zoomed-img {
     @include absoluteCenter;
     border-radius: 0.5rem;
-    width: 50vw;
+    width: 75vw;
+  }
+
+  // adjusting zoomed modal image size on different screens
+  @include respond(phone) {
+    .zoomed-img {
+      width: calc(100vw - 5rem);
+    }
+  }
+  @include respond(tab-p) {
+    .zoomed-img {
+      width: calc(100vw - 10rem);
+    }
+  }
+  @include respond(tab-l) {
+    .zoomed-img {
+      width: 75vw;
+    }
   }
 }
