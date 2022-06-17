@@ -83,14 +83,12 @@
     .skill-bar {
       width: 70%;
       height: 1rem;
-
       background: var(--color-bg-offset);
       display: flex;
       align-items: center;
 
       &-inner {
         height: 0.5rem;
-
         background-image: linear-gradient(
           to right,
           var(--color-primary),

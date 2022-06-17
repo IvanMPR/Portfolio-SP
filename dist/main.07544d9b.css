@@ -148,10 +148,28 @@ ul {
   list-style: none;
 }
 
+.separator {
+  width: 100vw;
+}
+.separator #wave1,
+.separator #wave3 {
+  margin-bottom: -1rem;
+}
+.separator #wave2,
+.separator #wave4 {
+  margin-bottom: 1rem;
+}
+
+.separator-test {
+  width: 100%;
+  height: 15rem;
+  background-color: var(--color-bg-offset);
+}
+
 .svg-test {
   position: absolute;
   top: -180px;
-  z-index: 10000;
+  z-index: 1;
 }
 
 .container {
@@ -550,6 +568,9 @@ ul {
 }
 .footer__scroll .fa-computer-mouse {
   color: var(--color-primary);
+}
+.footer__scroll--next:active {
+  transform: translateY(3px);
 }
 .footer__cv-button {
   font-size: var(--font-normal);
