@@ -5,7 +5,7 @@ import {
   aboutCallback,
 } from './js modules/intersectionObservers.js';
 
-// Switching active class between links / event delegation
+// Switching active class between links on click / event delegation
 // ------------------------------------- //
 const parentUl = document.querySelector('.nav-right__ul');
 export const links = document.querySelectorAll('.nav-right__link');
@@ -45,7 +45,7 @@ document.addEventListener('scroll', function () {
     document.documentElement.clientHeight;
   const percentage = (windowScroll / height) * 100;
   // add/remove box-shadow from header
-  percentage > 17
+  percentage > 13
     ? header.classList.add('box-shadow')
     : header.classList.remove('box-shadow');
 
@@ -65,6 +65,7 @@ toggleContainer.addEventListener('click', function (e) {
     moonIcon.style.display = 'none';
     body.dataset.theme = 'dark';
     sunIcon.style.display = 'block';
+    // console.log(document.querySelector('#sw-gradient-0'));
   } else {
     sunIcon.style.display = 'none';
     body.dataset.theme = 'default';
@@ -252,7 +253,7 @@ contactObserver.observe(contactSection);
 // about section --------------------------------------------------------------------//
 const aboutOptions = {
   root: null,
-  threshold: 0.8,
+  threshold: 0.5,
 };
 const aboutObserver = new IntersectionObserver(aboutCallback, aboutOptions);
 aboutObserver.observe(aboutSection);

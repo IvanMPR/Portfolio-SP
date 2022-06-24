@@ -133,6 +133,8 @@ var _index = require("../index.js");
 function homeCallback(entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
+      console.log('home');
+
       _index.links.forEach(function (link) {
         link.classList.remove('active');
       });
@@ -145,6 +147,8 @@ function homeCallback(entries) {
 function projectsCallback(entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
+      console.log('projects');
+
       _index.links.forEach(function (link) {
         link.classList.remove('active');
       });
@@ -157,6 +161,8 @@ function projectsCallback(entries) {
 function contactCallback(entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
+      console.log('contact');
+
       _index.links.forEach(function (link) {
         link.classList.remove('active');
       });
@@ -169,6 +175,8 @@ function contactCallback(entries) {
 function aboutCallback(entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
+      console.log('about');
+
       _index.links.forEach(function (link) {
         link.classList.remove('active');
       });
@@ -187,7 +195,7 @@ exports.links = void 0;
 
 var _intersectionObservers = require("./js modules/intersectionObservers.js");
 
-// Switching active class between links / event delegation
+// Switching active class between links on click / event delegation
 // ------------------------------------- //
 var parentUl = document.querySelector('.nav-right__ul');
 var links = document.querySelectorAll('.nav-right__link');
@@ -223,7 +231,7 @@ document.addEventListener('scroll', function () {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var percentage = windowScroll / height * 100; // add/remove box-shadow from header
 
-  percentage > 17 ? header.classList.add('box-shadow') : header.classList.remove('box-shadow');
+  percentage > 13 ? header.classList.add('box-shadow') : header.classList.remove('box-shadow');
   progressBarFiller.style.width = "".concat(percentage, "%");
 }); // toggling light/dark mode
 // ---------------------------------------------------------------------- //
@@ -237,7 +245,7 @@ toggleContainer.addEventListener('click', function (e) {
   if (e.target.classList.contains('fa-moon')) {
     moonIcon.style.display = 'none';
     body.dataset.theme = 'dark';
-    sunIcon.style.display = 'block';
+    sunIcon.style.display = 'block'; // console.log(document.querySelector('#sw-gradient-0'));
   } else {
     sunIcon.style.display = 'none';
     body.dataset.theme = 'default';
@@ -403,7 +411,7 @@ contactObserver.observe(contactSection); // about section ----------------------
 
 var aboutOptions = {
   root: null,
-  threshold: 0.8
+  threshold: 0.5
 };
 var aboutObserver = new IntersectionObserver(_intersectionObservers.aboutCallback, aboutOptions);
 aboutObserver.observe(aboutSection);
@@ -435,7 +443,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61242" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59617" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -3,6 +3,7 @@ import { links } from '../index.js';
 export function homeCallback(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      console.log('home');
       links.forEach(link => {
         link.classList.remove('active');
       });
@@ -14,6 +15,7 @@ export function homeCallback(entries) {
 export function projectsCallback(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      console.log('projects');
       links.forEach(link => {
         link.classList.remove('active');
       });
@@ -27,6 +29,7 @@ export function projectsCallback(entries) {
 export function contactCallback(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      console.log('contact');
       links.forEach(link => {
         link.classList.remove('active');
       });
@@ -39,6 +42,7 @@ export function contactCallback(entries) {
 export function aboutCallback(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      console.log('about');
       links.forEach(link => {
         link.classList.remove('active');
       });
