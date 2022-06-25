@@ -884,10 +884,15 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 .about-section__content--left {
   width: 50%;
+}
+.about-section__content--left .about-subtitle {
+  font-size: var(--font-l);
+  color: var(--color-text);
+  font-style: italic;
 }
 .about-section__content--left .left-intro__para {
   color: var(--color-text);
@@ -900,6 +905,14 @@ ul {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 3rem 0;
+}
+.about-section__content--left .left-skills__para {
+  color: var(--color-text);
+  font-size: var(--font-normal);
+  width: 100%;
+  text-align: justify;
+  margin: 2rem 0 4rem;
 }
 .about-section__content--left .left-skills .skills {
   display: flex;
@@ -947,11 +960,58 @@ ul {
   border-radius: 0.5rem;
   margin-left: 2px;
 }
+.about-section__content--left .about__personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 3rem auto 5rem;
+}
+.about-section__content--left .about__personal--ul {
+  margin-left: 1rem;
+  list-style: disc;
+}
+.about-section__content--left .about__personal--ul li {
+  font-size: var(--font-normal);
+  color: var(--color-text);
+  margin: 1rem 0;
+  text-align: justify;
+}
+.about-section__content--left .about__personal--ul li a {
+  text-decoration: underline;
+  font-style: italic;
+  color: var(--color-primary);
+}
 .about-section__content--right {
   width: 50%;
 }
 .about-section__content--right .right-intro__img {
   text-align: right;
+}
+.about-section__content--right .collage {
+  width: 100%;
+  margin-left: 5rem;
+  transform: rotate(3deg);
+  outline: 0.5rem solid var(--color-primary);
+  border-radius: 0.5rem;
+}
+.about-section__content .right-skills {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.about-section__content .right-skills .cert-title__link {
+  font-size: var(--font-normal);
+  color: var(--color-text);
+  text-decoration: underline;
+}
+.about-section__content .right-skills .certificate {
+  width: 35%;
+}
+.about-section__content .right-skills .certificate__img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=/main.07544d9b.css.map */

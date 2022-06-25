@@ -253,7 +253,7 @@ contactObserver.observe(contactSection);
 // about section --------------------------------------------------------------------//
 const aboutOptions = {
   root: null,
-  threshold: 0.5,
+  threshold: 0.2,
 };
 const aboutObserver = new IntersectionObserver(aboutCallback, aboutOptions);
 aboutObserver.observe(aboutSection);

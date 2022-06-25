@@ -411,7 +411,7 @@ contactObserver.observe(contactSection); // about section ----------------------
 
 var aboutOptions = {
   root: null,
-  threshold: 0.5
+  threshold: 0.2
 };
 var aboutObserver = new IntersectionObserver(_intersectionObservers.aboutCallback, aboutOptions);
 aboutObserver.observe(aboutSection);
@@ -443,7 +443,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59617" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58122" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
