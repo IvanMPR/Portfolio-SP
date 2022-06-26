@@ -148,6 +148,7 @@
     &--right {
       width: 50%;
       // background-color: brown;
+
       .right-intro__img {
         text-align: right;
       }
@@ -157,6 +158,7 @@
         margin-left: 5rem;
         transform: rotate(3deg);
         outline: 0.5rem solid var(--color-primary);
+        outline-offset: 0.4rem;
         border-radius: 0.5rem;
       }
     }
@@ -182,186 +184,86 @@
 
         &__img {
           width: 100%;
+          outline: 0.5rem solid var(--color-primary);
+          outline-offset: 0.5rem;
+          border-radius: 0.4rem;
+          transition: transform 0.2s ease-in;
+
+          &:hover {
+            transform: scale(1.03);
+          }
           // display: block;
         }
       }
     }
   }
+
+  @include respond(phone) {
+    & {
+      // empty
+      &__content {
+        // empty
+        &--pair {
+          flex-direction: column;
+        }
+
+        &--left {
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+
+        &--right {
+          width: 100%;
+
+          .right-intro__img {
+            text-align: center;
+
+            .blob2 {
+              width: 100%;
+              align-self: flex-start;
+            }
+          }
+
+          .right-skills {
+            flex-direction: column;
+
+            .cert-title__link {
+              display: block;
+              margin-bottom: 3rem;
+              font-size: var(--font-l);
+            }
+
+            .certificate {
+              width: 80%;
+              // background-color: chartreuse;
+              // display: flex;
+              // align-items: center;
+              // justify-content: center;
+
+              &__img {
+                // width: 100%;
+                // outline: 0.5rem solid var(--color-primary);
+                // outline-offset: 0.5rem;
+                // border-radius: 0.4rem;
+                // transition: transform 0.2s ease-in;
+
+                &:hover {
+                  transform: scale(1.01);
+                }
+              }
+            }
+          }
+          .collage {
+            display: block;
+            margin: auto;
+            width: 95%;
+            transform: rotate(0deg);
+            outline: 0.5rem solid var(--color-primary);
+            outline-offset: 0.4rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }
-
-// .about-section__content {
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   // justify-content: space-between;
-
-//   &--pair {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     width: 100%;
-//     // background-color: aqua;
-//     margin-bottom: 2rem;
-//   }
-
-//   &--left,
-//   &--right {
-//     width: 95%;
-//     // background-color: #b38247;
-//   }
-
-//   &--right {
-//     // height: 100%;
-//     &:nth-child(even) {
-//       align-self: flex-start;
-//     }
-//     .certificate {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: flex-end;
-//       width: 100%;
-
-//       .cert-wrapper-link {
-//         display: block;
-//       }
-//       &__img {
-//         width: 45%;
-//         // display: block;
-//       }
-//     }
-//   }
-
-//   .about-intro {
-//     width: 95%;
-//     // margin: auto;
-//     // text-align: center;
-
-//     &__para {
-//       color: var(--color-text);
-//       font-size: var(--font-normal);
-//       width: 100%;
-//       text-align: justify;
-//       margin: 2rem 0;
-//     }
-
-//     &__img {
-//       width: 95%;
-//       height: auto;
-//       background-color: var(--color-primary);
-//       // .ivan {
-//       //   width: 100%;
-//       // }
-//     }
-//   }
-
-//   .about__skills,
-//   .about__personal {
-//     width: 100%;
-//   }
-
-//   .about__skills {
-//     padding-top: 5rem;
-//     .skill-icon {
-//       display: inline-block;
-
-//       &-svg {
-//         width: 3.3rem;
-//       }
-//     }
-//     // skill level bars
-//     .inner-html {
-//       width: 85%;
-//     }
-//     .inner-css {
-//       width: 85%;
-//     }
-//     .inner-js {
-//       width: 90%;
-//     }
-//     .inner-sass {
-//       width: 80%;
-//     }
-//     .inner-ai {
-//       width: 95%;
-//     }
-//     .inner-react {
-//       width: 30%;
-//     }
-
-//     &--html {
-//       padding-top: 3rem;
-//       border-top: 1px solid var(--color-text-offset);
-//     }
-
-//     &--react {
-//       padding-bottom: 3rem;
-//       border-bottom: 1px solid var(--color-text-offset);
-//     }
-
-//     &--html,
-//     &--css,
-//     &--js,
-//     &--sass,
-//     &--ai,
-//     &--react {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       width: 100%;
-//       margin-bottom: 5rem;
-//     }
-
-//     .skill-bar {
-//       width: 70%;
-//       height: 1rem;
-//       background: var(--color-bg-offset);
-//       display: flex;
-//       align-items: center;
-
-//       &-inner {
-//         height: 0.5rem;
-//         background-image: linear-gradient(
-//           to right,
-//           var(--color-primary),
-//           var(--color-bg)
-//         );
-//         background-size: 400%;
-//       }
-//     }
-//   }
-
-//   .about__personal {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     width: 50%;
-//     margin: 3rem auto 5rem;
-//     border-top: 1px solid var(--color-text-offset);
-
-//     &--ul {
-//       margin-left: 1rem;
-//       list-style: disc;
-//       & li {
-//         // padding-left: 1rem;
-//         // text-indent: -1rem;
-
-//         font-size: var(--font-normal);
-//         color: var(--color-text-offset);
-//         margin: 1rem 0;
-//         text-align: justify;
-
-//         & a {
-//           text-decoration: underline;
-//           font-style: italic;
-//         }
-//       }
-//     }
-//   }
-
-//   @include respond(phone) {
-//     &--pair {
-//       flex-direction: column;
-//     }
-//   }
-// }
