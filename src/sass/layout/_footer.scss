@@ -82,22 +82,24 @@
 
   @include respond(phone) {
     &__upper {
-      flex-direction: column-reverse;
+      // flex-direction: column-reverse;
       // align-items: flex-start;
       // margin-left: 3rem;
     }
 
     &__scroll {
       margin-right: 0rem;
+      display: none;
     }
   }
   @include respond(tab-p) {
     &__upper {
-      flex-direction: column-reverse;
+      // flex-direction: column-reverse;
     }
 
     &__scroll {
       margin-right: 0rem;
+      display: none;
     }
   }
 }
