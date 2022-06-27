@@ -45,7 +45,7 @@ document.addEventListener('scroll', function () {
     document.documentElement.clientHeight;
   const percentage = (windowScroll / height) * 100;
   // add/remove box-shadow from header
-  percentage > 13
+  percentage > 9
     ? header.classList.add('box-shadow')
     : header.classList.remove('box-shadow');
 

@@ -539,6 +539,7 @@ ul {
 .footer__scroll {
   display: flex;
   align-items: center;
+  margin-right: 5rem;
 }
 .footer__scroll--p {
   font-size: var(--font-normal);
@@ -576,10 +577,16 @@ ul {
   .footer__upper {
     flex-direction: column-reverse;
   }
+  .footer__scroll {
+    margin-right: 0rem;
+  }
 }
 @media (min-width: 37.51em) and (max-width: 56.25em) {
   .footer__upper {
     flex-direction: column-reverse;
+  }
+  .footer__scroll {
+    margin-right: 0rem;
   }
 }
 
@@ -708,9 +715,6 @@ ul {
   }
 }
 
-.projects-section {
-  margin-bottom: 3rem;
-}
 .projects-section__content {
   display: flex;
   flex-direction: column;
@@ -782,16 +786,6 @@ ul {
 .projects-section .frame .dot-active {
   opacity: 0.7;
 }
-@media (max-width: 37.5em) {
-  .projects-section .frame {
-    min-height: 62rem;
-  }
-}
-@media (min-width: 37.51em) and (max-width: 56.25em) {
-  .projects-section .frame {
-    min-height: 62rem;
-  }
-}
 .projects-section .project {
   width: 100%;
   border-radius: 1rem;
@@ -809,7 +803,7 @@ ul {
   padding-left: 5rem;
 }
 .projects-section .project-left__image-container {
-  max-width: 48rem;
+  max-width: 100%;
   transition: all 0.2s;
   position: relative;
 }
@@ -846,27 +840,49 @@ ul {
   font-size: var(--font-normal);
 }
 @media (max-width: 37.5em) {
+  .projects-section {
+    margin-bottom: 2.5rem;
+  }
+  .projects-section .frame {
+    min-height: 65rem;
+  }
+  .projects-section .frame .dots-container {
+    top: 98%;
+  }
   .projects-section .project {
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    top: 8rem;
   }
   .projects-section .project-right {
     padding-right: 0;
+    width: 70%;
   }
   .projects-section .project-left {
     padding-left: 0;
+    width: 70%;
   }
 }
 @media (min-width: 37.51em) and (max-width: 56.25em) {
+  .projects-section {
+    margin-bottom: 2.5rem;
+  }
+  .projects-section .frame {
+    min-height: 65rem;
+  }
+  .projects-section .frame .dots-container {
+    top: 98%;
+  }
   .projects-section .project {
     flex-direction: column;
+    top: 8rem;
   }
   .projects-section .project-right {
     padding-right: 0;
+    width: 70%;
   }
   .projects-section .project-left {
     padding-left: 0;
+    width: 70%;
   }
 }
 

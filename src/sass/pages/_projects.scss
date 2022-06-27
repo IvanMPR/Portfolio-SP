@@ -4,7 +4,7 @@
 .projects-section {
   // temporary
   // margin-top: -5rem;
-  margin-bottom: 3rem;
+  // margin-bottom: 3rem;
 
   &__content {
     display: flex;
@@ -90,17 +90,6 @@
     .dot-active {
       opacity: 0.7;
     }
-    // by increasing height of a frame div, description text remains visible on small screens
-    @include respond(phone) {
-      & {
-        min-height: 62rem;
-      }
-    }
-    @include respond(tab-p) {
-      & {
-        min-height: 62rem;
-      }
-    }
   }
 
   .project {
@@ -108,6 +97,7 @@
     border-radius: 1rem;
     transition: all 0.3s ease-out;
     display: flex;
+    // flex-direction: column; // test
     align-items: center;
     justify-content: space-between;
     position: absolute;
@@ -123,7 +113,7 @@
     }
 
     &-left__image-container {
-      max-width: 48rem;
+      max-width: 100%;
       transition: all 0.2s;
       position: relative;
     }
@@ -166,29 +156,61 @@
         font-size: var(--font-normal);
       }
     }
+  }
 
-    @include respond(phone) {
-      & {
+  @include respond(phone) {
+    & {
+      margin-bottom: 2.5rem;
+
+      .frame {
+        // by increasing height of a frame div, description text remains visible on small screens
+        min-height: 65rem;
+
+        .dots-container {
+          top: 98%;
+        }
+      }
+
+      .project {
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-      }
-      &-right {
-        padding-right: 0;
-      }
-      &-left {
-        padding-left: 0;
+        top: 8rem;
+
+        &-right {
+          padding-right: 0;
+          width: 70%;
+        }
+        &-left {
+          padding-left: 0;
+          width: 70%;
+        }
       }
     }
-    @include respond(tab-p) {
-      & {
+  }
+  @include respond(tab-p) {
+    & {
+      margin-bottom: 2.5rem;
+
+      .frame {
+        // by increasing height of a frame div, description text remains visible on small screens
+        min-height: 65rem;
+
+        .dots-container {
+          top: 98%;
+        }
+      }
+
+      .project {
         flex-direction: column;
-      }
-      &-right {
-        padding-right: 0;
-      }
-      &-left {
-        padding-left: 0;
+        top: 8rem;
+
+        &-right {
+          padding-right: 0;
+          width: 70%;
+        }
+        &-left {
+          padding-left: 0;
+          width: 70%;
+        }
       }
     }
   }

@@ -33,6 +33,7 @@
   &__scroll {
     display: flex;
     align-items: center;
+    margin-right: 5rem;
 
     &--p {
       font-size: var(--font-normal);
@@ -85,10 +86,18 @@
       // align-items: flex-start;
       // margin-left: 3rem;
     }
+
+    &__scroll {
+      margin-right: 0rem;
+    }
   }
   @include respond(tab-p) {
     &__upper {
       flex-direction: column-reverse;
+    }
+
+    &__scroll {
+      margin-right: 0rem;
     }
   }
 }

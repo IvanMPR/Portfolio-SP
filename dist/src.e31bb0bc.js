@@ -231,7 +231,7 @@ document.addEventListener('scroll', function () {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var percentage = windowScroll / height * 100; // add/remove box-shadow from header
 
-  percentage > 13 ? header.classList.add('box-shadow') : header.classList.remove('box-shadow');
+  percentage > 9 ? header.classList.add('box-shadow') : header.classList.remove('box-shadow');
   progressBarFiller.style.width = "".concat(percentage, "%");
 }); // toggling light/dark mode
 // ---------------------------------------------------------------------- //
@@ -443,7 +443,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52597" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49864" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
