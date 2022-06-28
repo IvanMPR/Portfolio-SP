@@ -2,8 +2,8 @@
 @use '../base/' as *;
 
 .home {
-  margin-top: 17rem;
-  margin-bottom: 15rem;
+  margin-top: 20rem;
+  margin-bottom: 17rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -64,11 +64,11 @@
       align-self: flex-start;
     }
 
-    .main__blob {
-      // width: 40rem;
-      // margin-top: 2rem;
-      // align-self: flex-start;
-    }
+    // .main__blob {
+    //   // width: 40rem;
+    //   // margin-top: 2rem;
+    //   // align-self: flex-start;
+    // }
   }
 
   @include respond(tab-p) {

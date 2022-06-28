@@ -151,6 +151,9 @@ ul {
 .separator {
   position: relative;
   width: 100vw;
+  height: 15vh;
+  background-color: var(--color-bg);
+  background: url("/pattern.6a9288f5.jpg");
 }
 .separator:not(:last-child) {
   margin-bottom: 5rem;
@@ -517,7 +520,6 @@ ul {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border-top: 2px solid var(--color-bgd-offset);
   margin-bottom: 3rem;
 }
 .footer__upper {
@@ -588,8 +590,8 @@ ul {
 }
 
 .home {
-  margin-top: 17rem;
-  margin-bottom: 15rem;
+  margin-top: 20rem;
+  margin-bottom: 17rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -727,6 +729,9 @@ ul {
   }
 }
 
+.projects-section {
+  margin-top: 5rem;
+}
 .projects-section__content {
   display: flex;
   flex-direction: column;

@@ -62,6 +62,10 @@ ul {
 .separator {
   position: relative;
   width: 100vw;
+  height: 15vh;
+  background-color: var(--color-bg);
+  // box-shadow: 0px 2rem 2rem -2rem rgba(13, 43, 90, 0.08);
+  background: url('./../images/pattern.jpg');
 
   &:not(:last-child) {
     margin-bottom: 5rem;
