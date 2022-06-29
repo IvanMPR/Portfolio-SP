@@ -2,18 +2,18 @@
 @use '../base/' as *;
 
 .home {
+  position: relative;
   margin-top: 20rem;
   margin-bottom: 17rem;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: lightgoldenrodyellow;
+  // background-color: lightgoldenrodyellow;
 
   &__main-h1 {
     // margin-top: 2rem;
-    background-color: aqua;
+    // background-color: aqua;
     width: 60%;
     &--small,
     &--big {
@@ -37,7 +37,7 @@
   }
 
   &__main-image {
-    background-color: brown;
+    // background-color: brown;
     width: 43rem;
     // width: 40%;
     // height: 43rem;
@@ -55,47 +55,41 @@
       margin-bottom: 4rem;
     }
     &__main-h1 {
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
       width: 100%;
     }
 
     &__main-image {
-      margin-top: 2rem;
+      // margin-top: 2rem;
       align-self: flex-start;
     }
-
-    // .main__blob {
-    //   // width: 40rem;
-    //   // margin-top: 2rem;
-    //   // align-self: flex-start;
-    // }
   }
 
   @include respond(tab-p) {
     & {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 7rem;
+      // flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      // margin-bottom: 7rem;
+      // background-color: aqua;
     }
 
     &__main-h1 {
-      margin-bottom: 6rem;
+      // margin-bottom: 6rem;
       width: 100%;
+      // background-color: olivedrab;
       &--big {
         font-size: var(--font-xl);
       }
     }
+    &__main-image {
+      // background-color: burlywood;
+      width: 48rem;
 
-    // &__image {
-    //   width: 42rem;
-    //   height: 42rem;
-    //   align-self: flex-start;
-
-    //   &--inner {
-    //     width: 42rem;
-    //     height: 42rem;
-    //   }
-    // }
+      .main__blob {
+        // display: block;
+      }
+    }
   }
   @include respond(tab-l) {
     & {
@@ -110,16 +104,5 @@
         font-size: var(--font-xl);
       }
     }
-
-    // &__image {
-    //   width: 42rem;
-    //   height: 42rem;
-    //   align-self: flex-start;
-
-    //   &--inner {
-    //     width: 42rem;
-    //     height: 42rem;
-    //   }
-    // }
   }
 }

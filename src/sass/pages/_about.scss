@@ -266,4 +266,72 @@
       }
     }
   }
+  @include respond(tab-p) {
+    & {
+      // empty
+      &__content {
+        // empty
+        &--pair {
+          // flex-direction: column;
+        }
+
+        &--left {
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+
+        &--right {
+          width: 100%;
+
+          .right-intro__img {
+            text-align: center;
+
+            .blob2 {
+              width: 80%;
+              align-self: flex-start;
+            }
+          }
+
+          .right-skills {
+            flex-direction: column;
+
+            .cert-title__link {
+              display: block;
+              margin-bottom: 3rem;
+              font-size: var(--font-l);
+            }
+
+            .certificate {
+              width: 60%;
+              // background-color: chartreuse;
+              // display: flex;
+              // align-items: center;
+              // justify-content: center;
+
+              &__img {
+                // width: 100%;
+                // outline: 0.5rem solid var(--color-primary);
+                // outline-offset: 0.5rem;
+                // border-radius: 0.4rem;
+                // transition: transform 0.2s ease-in;
+
+                &:hover {
+                  transform: scale(1.01);
+                }
+              }
+            }
+          }
+          .collage {
+            display: block;
+            margin: auto;
+            width: 75%;
+            transform: rotate(0deg);
+            outline: 0.5rem solid var(--color-primary);
+            outline-offset: 0.4rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }

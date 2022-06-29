@@ -378,6 +378,12 @@ body.addEventListener('click', function (e) {
   if (!e.target.classList.contains('modal__zoom--content')) return;
   removeModal(modalContainer);
 }); // ------------------------------------------------------------------- //
+// Scroll to top of the page on refresh
+// ------------------------------------------------------------------- //
+
+window.addEventListener('load', function () {
+  this.window.scrollTo(0, 0);
+}); // ------------------------------------------------------------------- //
 // Add / remove active class on header links depending on scroll position
 // ------------------------------------------------------------------- //
 // observer callback functions are located in the separate js module
@@ -443,7 +449,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55707" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65077" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -211,6 +211,12 @@ body.addEventListener('click', function (e) {
   removeModal(modalContainer);
 });
 // ------------------------------------------------------------------- //
+// Scroll to top of the page on refresh
+// ------------------------------------------------------------------- //
+window.addEventListener('load', function () {
+  this.window.scrollTo(0, 0);
+});
+// ------------------------------------------------------------------- //
 // Add / remove active class on header links depending on scroll position
 // ------------------------------------------------------------------- //
 // observer callback functions are located in the separate js module

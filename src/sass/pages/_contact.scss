@@ -2,8 +2,7 @@
 @use '../base/' as *;
 
 .contact-section {
-  //   display: flex;
-  // border-top: 1px solid var(--color-bg-offset);
+  position: relative;
 
   &__content {
     width: 100%;
@@ -59,7 +58,7 @@
 
   .contact__footer {
     .footer__lower {
-      background-color: var(--color-bg-offset);
+      background-color: var(--color-bg);
       text-align: center;
       width: 100%;
       height: 5rem;
