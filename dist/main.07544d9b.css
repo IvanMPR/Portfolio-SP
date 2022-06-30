@@ -459,6 +459,7 @@ ul {
   margin-right: 2.5rem;
 }
 .nav-right__link:link, .nav-right__link:visited {
+  display: inline-block;
   position: relative;
   color: var(--color-text);
   font-size: var(--font-normal);
@@ -596,7 +597,7 @@ ul {
 .home {
   position: relative;
   margin-top: 20rem;
-  margin-bottom: 17rem;
+  margin-bottom: 18rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -659,13 +660,21 @@ ul {
 }
 @media (min-width: 56.26em) and (max-width: 75em) {
   .home {
-    margin-bottom: 7rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20rem;
+    background-color: aqua;
   }
   .home__main-h1 {
-    margin-bottom: 6rem;
+    width: 100%;
+    background-color: olivedrab;
   }
   .home__main-h1--big {
-    font-size: var(--font-xl);
+    font-size: var(--font-xxl);
+  }
+  .home__main-image {
+    background-color: burlywood;
+    width: 50rem;
   }
 }
 
@@ -1029,7 +1038,7 @@ ul {
   text-align: right;
 }
 .about-section__content--right .collage {
-  width: 100%;
+  width: 90%;
   margin-left: 5rem;
   transform: rotate(3deg);
   outline: 0.5rem solid var(--color-primary);
@@ -1075,7 +1084,7 @@ ul {
     text-align: center;
   }
   .about-section__content--right .right-intro__img .blob2 {
-    width: 100%;
+    width: 55%;
     align-self: flex-start;
   }
   .about-section__content--right .right-skills {
@@ -1136,6 +1145,45 @@ ul {
     margin: auto;
     width: 75%;
     transform: rotate(0deg);
+    outline: 0.5rem solid var(--color-primary);
+    outline-offset: 0.4rem;
+    border-radius: 0.5rem;
+  }
+}
+@media (min-width: 56.26em) and (max-width: 75em) {
+  .about-section__content--left {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .about-section__content--right {
+    width: 100%;
+  }
+  .about-section__content--right .right-intro__img {
+    text-align: center;
+  }
+  .about-section__content--right .right-intro__img .blob2 {
+    width: 80%;
+    align-self: flex-start;
+  }
+  .about-section__content--right .right-skills {
+    flex-direction: column;
+  }
+  .about-section__content--right .right-skills .cert-title__link {
+    display: block;
+    margin-bottom: 3rem;
+    font-size: var(--font-l);
+  }
+  .about-section__content--right .right-skills .certificate {
+    width: 60%;
+  }
+  .about-section__content--right .right-skills .certificate__img:hover {
+    transform: scale(1.01);
+  }
+  .about-section__content--right .collage {
+    display: block;
+    margin: auto;
+    width: 75%;
+    transform: rotate(3deg);
     outline: 0.5rem solid var(--color-primary);
     outline-offset: 0.4rem;
     border-radius: 0.5rem;
