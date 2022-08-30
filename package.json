@@ -2,14 +2,16 @@
   "name": "portfolio-sp",
   "version": "1.0.0",
   "description": "portfolio project",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Ivan Miceta",
   "license": "ISC",
+  "homepage": "https://ivanmpr.github.io/Portfolio-SP",
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.52.1"
   }

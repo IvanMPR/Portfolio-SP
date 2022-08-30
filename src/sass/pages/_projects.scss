@@ -3,9 +3,8 @@
 
 .projects-section {
   position: relative;
-  // temporary
   margin-top: 5rem;
-  margin-bottom: 8rem;
+  margin-bottom: 7rem;
 
   &__content {
     display: flex;
@@ -36,7 +35,6 @@
     width: 100%;
     min-height: 50rem;
     position: relative;
-    // background-color: var(--color-bg-offset);
     overflow: hidden;
 
     .frame-arrow__left,
@@ -98,7 +96,6 @@
     border-radius: 1rem;
     transition: all 0.3s ease-out;
     display: flex;
-    // flex-direction: column; // test
     align-items: center;
     justify-content: space-between;
     position: absolute;
@@ -127,7 +124,6 @@
 
     &-right {
       padding-right: 5rem;
-      // height: 25rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -164,7 +160,8 @@
       margin-bottom: 3rem;
 
       .frame {
-        // by increasing height of a frame div, description text remains visible on small screens
+        // by increasing height of a frame div,
+        // description text remains visible on small screens
         min-height: 65rem;
 
         .dots-container {
@@ -187,12 +184,14 @@
       }
     }
   }
+
   @include respond(tab-p) {
     & {
       margin-bottom: 2.5rem;
 
       .frame {
-        // by increasing height of a frame div, description text remains visible on small screens
+        // by increasing height of a frame div,
+        // description text remains visible on small screens
         min-height: 65rem;
 
         .dots-container {
