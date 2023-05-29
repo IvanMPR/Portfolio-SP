@@ -14,14 +14,19 @@
     align-items: center;
     flex-direction: column;
     // background-color: aquamarine;
+    position: relative;
 
     &--pair {
       // background-color: #3f7731;
+      // position: relative;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 5rem;
+      // &:nth-child(2) {
+      //   background-color: var(--color-bg-offset);
+      // }
     }
     &--left {
       // background-color: #4c6960;
@@ -78,7 +83,7 @@
           .skill-bar {
             width: 80%;
             height: 1rem;
-            background-color: var(--color-bg-offset);
+            background-color: var(--color-bg);
             border-radius: 0.5rem;
             display: flex;
             align-items: center;
