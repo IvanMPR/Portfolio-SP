@@ -13,7 +13,19 @@
 
     .subtitle {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       margin: 1rem auto 5rem;
+
+      &-text {
+        font-size: var(--font-normal);
+        color: var(--color-text);
+        margin-bottom: 2rem;
+      }
+
+      &-icon__wrapper {
+        display: flex;
+      }
 
       &-icon {
         width: 3rem;

@@ -110,8 +110,21 @@
       </p>
     </div> -->
     </footer>
-    <div class="divider"></div>
-    <!-- PROJECTS -->
+    <div class="divider divider__curved--home home-divider">
+      <svg width="0" height="0">
+        <defs>
+          <clipPath id="myCurve" clipPathUnits="objectBoundingBox">
+            <path d="M 0,1
+                 L 0,0
+                 L 1,0
+                 L 1,1
+                 C .52 .4, .5 .2, 0 1
+                 Z"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+    <!----------------------------- PROJECTS --------------------------------->
     <section class="projects-section container" id="projects">
       <div class="background"></div>
       <h2 class="section__title wrapper">
@@ -119,23 +132,29 @@
       </h2>
       <div class="projects-section__content wrapper-l">
         <div class="subtitle">
-          <div class="subtitle-icon">
-            <img src="/html5.b89cb513.svg" alt="HTML5 icon" class="tech-icons">
+          <div class="subtitle-text">
+            <p>Level: beginner to intermediate</p>
+            <!-- <h4>Level: beginner to intermediate</h4> -->
           </div>
-          <div class="subtitle-icon">
-            <img src="/css3.8051f439.svg" alt="HTML5 icon" class="tech-icons">
-          </div>
-          <div class="subtitle-icon">
-            <img src="/js.40ff721b.svg" alt="HTML5 icon" class="tech-icons">
-          </div>
-          <div class="subtitle-icon">
-            <img src="/react.b4736c33.png" alt="HTML5 icon" class="tech-icons">
-          </div>
-          <div class="subtitle-icon">
-            <img src="/sass.9dae6166.svg" alt="HTML5 icon" class="tech-icons">
-          </div>
-          <div class="subtitle-icon">
-            <img src="/illustrator.0a7775f1.svg" alt="HTML5 icon" class="tech-icons">
+          <div class="subtitle-icon__wrapper">
+            <div class="subtitle-icon">
+              <img src="/html5.b89cb513.svg" alt="HTML5 icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/css3.8051f439.svg" alt="HTML5 icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/js.40ff721b.svg" alt="HTML5 icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/react.b4736c33.png" alt="HTML5 icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/sass.9dae6166.svg" alt="HTML5 icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/illustrator.0a7775f1.svg" alt="HTML5 icon" class="tech-icons">
+            </div>
           </div>
         </div>
         <div class="frame">
@@ -298,6 +317,73 @@
           </div>
           <div class="dots-container"></div>
         </div>
+        <div class="subtitle subtitle__advanced">
+          <div class="subtitle-text">
+            <p>Level: intermediate to advanced</p>
+            <!-- <h4>Level: beginner to intermediate</h4> -->
+          </div>
+          <div class="subtitle-icon__wrapper">
+            <div class="subtitle-icon">
+              <img src="/js.40ff721b.svg" alt="JavaScript icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/nodejs.07dc8b73.svg" alt="NodeJS icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/express.215fa55e.svg" alt="Node Express icon" class="tech-icons">
+            </div>
+            <div class="subtitle-icon">
+              <img src="/socket-io.6a4615d0.svg" alt="Socket-io icon" class="tech-icons">
+            </div>
+          </div>
+        </div>
+        <div class="frame frame__advanced">
+          <div class="frame-arrow__left">
+            <i class="fas fa-chevron-left fa-5x" title="Previous project"></i>
+          </div>
+          <div class="frame-arrow__right">
+            <i class="fas fa-chevron-right fa-5x" title="Next project"></i>
+          </div>
+
+          <div class="project project-chatter">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/chatter.3fff19a4.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">Chatter app</h3>
+              <div class="project-right__container">
+                <a href="https://chatter-app-cb20.onrender.com" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/chatter-app" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                Real time chat application, first project created using NodeJS,
+                Express and Socket.io. Deployed on Render.com
+              </p>
+            </div>
+          </div>
+          <div class="project project-tic-tac-toe">
+            <div class="project-left">
+              <div class="project-left__image-container wrapper">
+                <img class="project-left__image" src="/tic-tac-toe.434a6a9d.jpg" title="Click to zoom the image">
+              </div>
+            </div>
+            <div class="project-right">
+              <h3 class="project-right__title">Tic Tac Toe</h3>
+              <div class="project-right__container">
+                <a href="https://tic-tac-toe-online-multiplayer-game.onrender.com" target="_blank" title="Link to live demo page" class="project-right__container-link project-right__demo">Demo</a>
+                <a href="https://github.com/IvanMPR/tic-tac-toe" target="_blank" title="Link to source code page" class="project-right__container-link project-right__code">Source code</a>
+              </div>
+              <p class="project-right__description">
+                Online multiplayer game of Tic Tac Toe, created using NodeJS,
+                Express and Socket.io. Deployed on Render.com.
+              </p>
+            </div>
+          </div>
+
+          <div class="dots-container"></div>
+        </div>
       </div>
       <footer class="footer container home__footer">
         <div class="footer__upper">
@@ -333,7 +419,19 @@
       </footer>
     </section>
     <!-- <div class="separator"></div> -->
-    <div class="divider"></div>
+    <div class="divider divider__curved--about about-divider">
+      <svg width="0" height="0">
+        <defs>
+          <clipPath id="myCurveAbout" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0.2
+                 C 0.45,0.9, 0.5,0, 1,0.2
+                 L 1,1
+                 L 0,1
+                 Z"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
 
     <!-- ABOUT -->
     <section class="about-section container" id="about">
@@ -559,6 +657,20 @@
       </div> -->
       </footer>
     </section>
+    <div class="divider divider__curved--contact contact-divider">
+      <svg width="0" height="0">
+        <defs>
+          <clipPath id="myCurveContact" clipPathUnits="objectBoundingBox">
+            <path d="M 0,1
+                 L 0,0
+                 L 1,0
+                 L 1,1
+                 C .45 .4, .25 .2, 0 1
+                 Z"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
 
     <!-- CONTACT -->
     <section class="contact-section container" id="contact">
