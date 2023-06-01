@@ -289,27 +289,35 @@ var images = document.querySelectorAll('.project');
 var rightArrow = document.querySelector('.frame-arrow__right');
 var leftArrow = document.querySelector('.frame-arrow__left');
 var dotsContainer = document.querySelector('.dots-container');
+var imagesAdvanced = document.querySelectorAll('.project__advanced');
+var rightArrowAdvanced = document.querySelector('.frame-arrow__right--advanced');
+var leftArrowAdvanced = document.querySelector('.frame-arrow__left--advanced');
+var dotsContainerAdvanced = document.querySelector('.dots-container__advanced');
 var data = {
   currentImage: 0,
-  threshold: images.length - 1
+  currentImageAdvanced: 0,
+  threshold: images.length - 1,
+  thresholdAdvanced: imagesAdvanced.length - 1
 };
 
-function goToImage(imageNum) {
-  images.forEach(function (img, i) {
+function goToImage(projectsArray, imageNum) {
+  projectsArray.forEach(function (img, i) {
     return img.style.transform = "translateX(".concat(100 * (i - imageNum), "%");
   });
 }
 
-goToImage(0); //  create dots under projects container
+goToImage(images, 0);
+goToImage(imagesAdvanced, 0); //  create dots under projects container
 
-function createDots() {
-  images.forEach(function (image, i) {
-    var html = "<span class=\"dot\" data-image=\"".concat(i, "\"></span>");
-    dotsContainer.insertAdjacentHTML('beforeend', html);
+function createDots(projectsArray, dotType, dotsContainerName) {
+  projectsArray.forEach(function (_, i) {
+    var html = "<span class=\"".concat(dotType, "\" data-image=\"").concat(i, "\"></span>");
+    dotsContainerName.insertAdjacentHTML('beforeend', html);
   });
 }
 
-createDots(); // Add active class to current dot
+createDots(images, 'dot', dotsContainer);
+createDots(imagesAdvanced, 'dot__advanced', dotsContainerAdvanced); // Add active class to current dot
 
 function activateDot(currSlide) {
   document.querySelectorAll('.dot').forEach(function (dot) {
@@ -403,7 +411,8 @@ homeObserver.observe(homeSection); // projects section -------------------------
 
 var projectsOptions = {
   root: null,
-  threshold: 0.9
+  // changed from 0.9 to 0.5 to make the projects section appear earlier
+  threshold: 0.5
 };
 var projectsObserver = new IntersectionObserver(_intersectionObservers.projectsCallback, projectsOptions);
 projectsObserver.observe(projectsSection); // contact section -----------------------------------------------------//
@@ -449,7 +458,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49743" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62500" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

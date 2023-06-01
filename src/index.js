@@ -117,26 +117,41 @@ const rightArrow = document.querySelector('.frame-arrow__right');
 const leftArrow = document.querySelector('.frame-arrow__left');
 const dotsContainer = document.querySelector('.dots-container');
 
+const imagesAdvanced = document.querySelectorAll('.project__advanced');
+const rightArrowAdvanced = document.querySelector(
+  '.frame-arrow__right--advanced'
+);
+const leftArrowAdvanced = document.querySelector(
+  '.frame-arrow__left--advanced'
+);
+const dotsContainerAdvanced = document.querySelector(
+  '.dots-container__advanced'
+);
+
 const data = {
   currentImage: 0,
+  currentImageAdvanced: 0,
   threshold: images.length - 1,
+  thresholdAdvanced: imagesAdvanced.length - 1,
 };
 
-function goToImage(imageNum) {
-  images.forEach(
+function goToImage(projectsArray, imageNum) {
+  projectsArray.forEach(
     (img, i) => (img.style.transform = `translateX(${100 * (i - imageNum)}%`)
   );
 }
-goToImage(0);
+goToImage(images, 0);
+goToImage(imagesAdvanced, 0);
 
 //  create dots under projects container
-function createDots() {
-  images.forEach((image, i) => {
-    const html = `<span class="dot" data-image="${i}"></span>`;
-    dotsContainer.insertAdjacentHTML('beforeend', html);
+function createDots(projectsArray, dotType, dotsContainerName) {
+  projectsArray.forEach((_, i) => {
+    const html = `<span class="${dotType}" data-image="${i}"></span>`;
+    dotsContainerName.insertAdjacentHTML('beforeend', html);
   });
 }
-createDots();
+createDots(images, 'dot', dotsContainer);
+createDots(imagesAdvanced, 'dot__advanced', dotsContainerAdvanced);
 
 // Add active class to current dot
 function activateDot(currSlide) {
@@ -238,7 +253,8 @@ homeObserver.observe(homeSection);
 // projects section ----------------------------------------------------//
 const projectsOptions = {
   root: null,
-  threshold: 0.9,
+  // changed from 0.9 to 0.5 to make the projects section appear earlier
+  threshold: 0.5,
 };
 const projectsObserver = new IntersectionObserver(
   projectsCallback,
