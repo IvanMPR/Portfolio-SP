@@ -319,47 +319,59 @@ function createDots(projectsArray, dotType, dotsContainerName) {
 createDots(images, 'dot', dotsContainer);
 createDots(imagesAdvanced, 'dot__advanced', dotsContainerAdvanced); // Add active class to current dot
 
-function activateDot(currSlide) {
-  document.querySelectorAll('.dot').forEach(function (dot) {
+function activateDot(currSlide, dotType) {
+  document.querySelectorAll(".".concat(dotType)).forEach(function (dot) {
     return dot.classList.remove('dot-active');
   });
-  document.querySelector(".dot[data-image=\"".concat(currSlide, "\"]")).classList.add('dot-active');
+  document.querySelector(".".concat(dotType, "[data-image=\"").concat(currSlide, "\"]")).classList.add('dot-active');
 }
 
-activateDot(0);
+activateDot(0, 'dot');
+activateDot(0, 'dot__advanced');
 
-function moveRight() {
-  if (data.currentImage === data.threshold) {
-    data.currentImage = 0;
+function moveRight(e) {
+  if (e.target.classList.contains('frame-arrow__right')) {
+    data.currentImage === data.threshold ? data.currentImage = 0 : data.currentImage++;
+    activateDot(data.currentImage, 'dot');
+    goToImage(images, data.currentImage);
   } else {
-    data.currentImage++;
+    data.currentImageAdvanced === data.thresholdAdvanced ? data.currentImageAdvanced = 0 : data.currentImageAdvanced++;
+    activateDot(data.currentImageAdvanced, 'dot__advanced');
+    goToImage(imagesAdvanced, data.currentImageAdvanced);
   }
-
-  activateDot(data.currentImage);
-  goToImage(data.currentImage);
 }
 
-function moveLeft() {
-  if (data.currentImage === 0) {
-    data.currentImage = data.threshold;
+function moveLeft(e) {
+  if (e.target.classList.contains('frame-arrow__left')) {
+    data.currentImage === 0 ? data.currentImage = data.threshold : data.currentImage--;
+    activateDot(data.currentImage, 'dot');
+    goToImage(images, data.currentImage);
   } else {
-    data.currentImage--;
+    data.currentImageAdvanced === 0 ? data.currentImageAdvanced = data.thresholdAdvanced : data.currentImageAdvanced--;
+    activateDot(data.currentImageAdvanced, 'dot__advanced');
+    goToImage(imagesAdvanced, data.currentImageAdvanced);
   }
-
-  activateDot(data.currentImage);
-  goToImage(data.currentImage);
 } // browse trough projects
 
 
 rightArrow.addEventListener('click', moveRight);
-leftArrow.addEventListener('click', moveLeft); // go to specific project by clicking on the dot
+rightArrowAdvanced.addEventListener('click', moveRight);
+leftArrow.addEventListener('click', moveLeft);
+leftArrowAdvanced.addEventListener('click', moveLeft); // go to specific project by clicking on the dot
 
 dotsContainer.addEventListener('click', function (e) {
   if (!e.target.classList.contains('dot')) return;
   var imgNumber = e.target.dataset.image;
   data.currentImage = Number(imgNumber);
-  activateDot(imgNumber);
-  goToImage(imgNumber);
+  activateDot(imgNumber, 'dot');
+  goToImage(images, imgNumber);
+});
+dotsContainerAdvanced.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('dot__advanced')) return;
+  var imgNumber = e.target.dataset.image;
+  data.currentImageAdvanced = Number(imgNumber);
+  activateDot(imgNumber, 'dot__advanced');
+  goToImage(imagesAdvanced, imgNumber);
 }); // ------------------------------------------------------------------- //
 // Open modal to zoom in the thumbnail project picture
 // ------------------------------------------------------------------- //
