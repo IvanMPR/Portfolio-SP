@@ -166,7 +166,7 @@ activateDot(0, 'dot');
 activateDot(0, 'dot__advanced');
 
 function moveRight(e) {
-  if (e.target.classList.contains('frame-arrow__right')) {
+  if (!e.target.classList.contains('right-advanced')) {
     data.currentImage === data.threshold
       ? (data.currentImage = 0)
       : data.currentImage++;
@@ -182,7 +182,7 @@ function moveRight(e) {
 }
 
 function moveLeft(e) {
-  if (e.target.classList.contains('frame-arrow__left')) {
+  if (!e.target.classList.contains('left-advanced')) {
     data.currentImage === 0
       ? (data.currentImage = data.threshold)
       : data.currentImage--;
@@ -202,7 +202,7 @@ rightArrow.addEventListener('click', moveRight);
 rightArrowAdvanced.addEventListener('click', moveRight);
 leftArrow.addEventListener('click', moveLeft);
 leftArrowAdvanced.addEventListener('click', moveLeft);
-// go to specific project by clicking on the dot
+// go to specific project by clicking on the dot REFACTOR
 dotsContainer.addEventListener('click', function (e) {
   if (!e.target.classList.contains('dot')) return;
   const imgNumber = e.target.dataset.image;
@@ -234,9 +234,17 @@ const removeModal = function (el) {
 };
 
 const thumbnailsParentDiv = document.querySelector('.frame');
+const thumbnailsParentDivAdvanced = document.querySelector('.frame__advanced');
 
 thumbnailsParentDiv.addEventListener('click', function (e) {
   if (!e.target.classList.contains('project-left__image')) return;
+
+  const url = e.target.getAttribute('src');
+  createModal(url);
+});
+
+thumbnailsParentDivAdvanced.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('project-left__image--advanced')) return;
 
   const url = e.target.getAttribute('src');
   createModal(url);

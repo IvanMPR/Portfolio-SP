@@ -66,8 +66,8 @@ ul {
   @include absoluteCenter;
   width: 100vw;
   height: 100%;
-  // background-color: var(--color-bg-offset);
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-offset);
+  // background-color: var(--color-bg);
   z-index: -1;
   // box-shadow: 0px 2rem 2rem -2rem rgba(13, 43, 90, 0.08);
   // background: url('./../images/pattern.jpg');

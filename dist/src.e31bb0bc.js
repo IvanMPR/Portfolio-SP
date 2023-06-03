@@ -330,7 +330,7 @@ activateDot(0, 'dot');
 activateDot(0, 'dot__advanced');
 
 function moveRight(e) {
-  if (e.target.classList.contains('frame-arrow__right')) {
+  if (!e.target.classList.contains('right-advanced')) {
     data.currentImage === data.threshold ? data.currentImage = 0 : data.currentImage++;
     activateDot(data.currentImage, 'dot');
     goToImage(images, data.currentImage);
@@ -342,7 +342,7 @@ function moveRight(e) {
 }
 
 function moveLeft(e) {
-  if (e.target.classList.contains('frame-arrow__left')) {
+  if (!e.target.classList.contains('left-advanced')) {
     data.currentImage === 0 ? data.currentImage = data.threshold : data.currentImage--;
     activateDot(data.currentImage, 'dot');
     goToImage(images, data.currentImage);
@@ -357,7 +357,7 @@ function moveLeft(e) {
 rightArrow.addEventListener('click', moveRight);
 rightArrowAdvanced.addEventListener('click', moveRight);
 leftArrow.addEventListener('click', moveLeft);
-leftArrowAdvanced.addEventListener('click', moveLeft); // go to specific project by clicking on the dot
+leftArrowAdvanced.addEventListener('click', moveLeft); // go to specific project by clicking on the dot REFACTOR
 
 dotsContainer.addEventListener('click', function (e) {
   if (!e.target.classList.contains('dot')) return;
@@ -388,8 +388,14 @@ var removeModal = function removeModal(el) {
 };
 
 var thumbnailsParentDiv = document.querySelector('.frame');
+var thumbnailsParentDivAdvanced = document.querySelector('.frame__advanced');
 thumbnailsParentDiv.addEventListener('click', function (e) {
   if (!e.target.classList.contains('project-left__image')) return;
+  var url = e.target.getAttribute('src');
+  createModal(url);
+});
+thumbnailsParentDivAdvanced.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('project-left__image--advanced')) return;
   var url = e.target.getAttribute('src');
   createModal(url);
 }); // close zoomed thumbnail
@@ -470,7 +476,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62500" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50982" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

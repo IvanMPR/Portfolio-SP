@@ -15,7 +15,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 1rem auto 5rem;
+      margin: 1rem auto 2rem;
 
       &-text {
         font-size: var(--font-normal);
@@ -41,6 +41,10 @@
         height: 100%;
       }
     }
+  }
+
+  .frame {
+    margin-bottom: 3rem;
   }
 
   .frame,
@@ -114,9 +118,9 @@
     }
   }
 
-  // .project__advanced {
-  //   flex-direction: row-reverse;
-  // }
+  .project__advanced {
+    flex-direction: row-reverse;
+  }
 
   .project,
   .project__advanced {
@@ -136,9 +140,13 @@
       width: 48%;
     }
 
-    &-left,
-    &-left__advanced {
+    &-left {
       padding-left: 5rem;
+    }
+
+    // fliped to row-reverse, so paddint adjustment is needed
+    &-left__advanced {
+      padding-right: 5rem;
     }
 
     &-left__image-container,
@@ -155,9 +163,17 @@
       cursor: pointer;
     }
 
+    &-right {
+      padding-right: 5rem;
+    }
+
+    // fliped to row-reverse, so paddint adjustment is needed
+    &-right__advanced {
+      padding-left: 5rem;
+    }
+
     &-right,
     &-right__advanced {
-      padding-right: 5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -198,17 +214,20 @@
     & {
       margin-bottom: 3rem;
 
-      .frame {
+      .frame,
+      .frame__advanced {
         // by increasing height of a frame div,
         // description text remains visible on small screens
         min-height: 65rem;
 
-        .dots-container {
+        .dots-container,
+        .dots-container__advanced {
           top: 98%;
         }
       }
 
-      .project {
+      .project,
+      .project__advanced {
         flex-direction: column;
         top: 8rem;
 
@@ -217,6 +236,14 @@
           width: 70%;
         }
         &-left {
+          padding-left: 0;
+          width: 70%;
+        }
+        &-left__advanced {
+          padding-right: 0;
+          width: 70%;
+        }
+        &-right__advanced {
           padding-left: 0;
           width: 70%;
         }
@@ -228,17 +255,20 @@
     & {
       margin-bottom: 2.5rem;
 
-      .frame {
+      .frame,
+      .frame__advanced {
         // by increasing height of a frame div,
         // description text remains visible on small screens
         min-height: 65rem;
 
-        .dots-container {
+        .dots-container,
+        .dots-container__advanced {
           top: 98%;
         }
       }
 
-      .project {
+      .project,
+      .project__advanced {
         flex-direction: column;
         top: 8rem;
 
@@ -248,6 +278,14 @@
         }
         &-left {
           padding-left: 0;
+          width: 70%;
+        }
+        &-right__advanced {
+          padding-left: 0;
+          width: 70%;
+        }
+        &-left__advanced {
+          padding-right: 0;
           width: 70%;
         }
       }

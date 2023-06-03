@@ -7,7 +7,11 @@
   align-items: center;
   width: 100%;
   // border-top: 2px solid var(--color-bgd-offset);
-  margin-bottom: 3rem;
+  // margin-bottom: 3rem;
+
+  &__home {
+    margin-bottom: 3rem;
+  }
 
   &__upper {
     width: 100%;
@@ -81,11 +85,11 @@
   }
 
   @include respond(phone) {
-    &__upper {
-      // flex-direction: column-reverse;
-      // align-items: flex-start;
-      // margin-left: 3rem;
-    }
+    // &__upper {
+    // flex-direction: column-reverse;
+    // align-items: flex-start;
+    // margin-left: 3rem;
+    // }
 
     &__scroll {
       margin-right: 0rem;
@@ -93,9 +97,9 @@
     }
   }
   @include respond(tab-p) {
-    &__upper {
-      // flex-direction: column-reverse;
-    }
+    // &__upper {
+    // flex-direction: column-reverse;
+    // }
 
     &__scroll {
       margin-right: 0rem;
