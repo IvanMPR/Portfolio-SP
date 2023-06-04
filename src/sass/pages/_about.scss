@@ -28,6 +28,11 @@
       //   background-color: var(--color-bg-offset);
       // }
     }
+
+    &--middle {
+      flex-direction: row-reverse;
+    }
+
     &--left {
       // background-color: #4c6960;
       width: 50%;
@@ -65,6 +70,7 @@
 
         .skills {
           display: flex;
+          flex-direction: row-reverse;
           align-items: center;
           justify-content: space-between;
           // background-color: aqua;
@@ -83,7 +89,7 @@
           .skill-bar {
             width: 80%;
             height: 1rem;
-            background-color: var(--color-bg);
+            background-color: var(--color-bg-offset);
             border-radius: 0.5rem;
             display: flex;
             align-items: center;
@@ -110,6 +116,18 @@
 
             .inner-illustrator {
               width: 85%;
+            }
+
+            .inner-socketio {
+              width: 50%;
+            }
+
+            .inner-nodejs {
+              width: 40%;
+            }
+
+            .inner-express {
+              width: 40%;
             }
             // inner - skill bar
             &-inner {

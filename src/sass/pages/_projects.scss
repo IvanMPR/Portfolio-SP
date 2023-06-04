@@ -178,10 +178,17 @@
       flex-direction: column;
       justify-content: space-between;
 
+      &__title--advanced {
+        text-align: right;
+      }
       &__title,
       &__title--advanced {
         font-size: var(--font-l);
         color: var(--color-text);
+      }
+
+      &__container--advanced {
+        justify-content: flex-end;
       }
 
       &__container,
@@ -201,6 +208,9 @@
       &__demo,
       &__demo--advanced {
         margin-right: 5rem;
+      }
+      &__description--advanced {
+        text-align: justify;
       }
       &__description,
       &__description--advanced {

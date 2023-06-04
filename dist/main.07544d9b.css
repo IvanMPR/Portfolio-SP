@@ -158,7 +158,7 @@ ul {
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 100%;
-  background-color: var(--color-bg-offset);
+  background-color: var(--color-bg);
   z-index: -1;
 }
 
@@ -940,6 +940,11 @@ ul {
   flex-direction: column;
   justify-content: space-between;
 }
+.projects-section .project-right__title--advanced, .projects-section .project-right__advanced__title--advanced,
+.projects-section .project__advanced-right__title--advanced,
+.projects-section .project__advanced-right__advanced__title--advanced {
+  text-align: right;
+}
 .projects-section .project-right__title, .projects-section .project-right__title--advanced, .projects-section .project-right__advanced__title, .projects-section .project-right__advanced__title--advanced,
 .projects-section .project__advanced-right__title,
 .projects-section .project__advanced-right__title--advanced,
@@ -947,6 +952,11 @@ ul {
 .projects-section .project__advanced-right__advanced__title--advanced {
   font-size: var(--font-l);
   color: var(--color-text);
+}
+.projects-section .project-right__container--advanced, .projects-section .project-right__advanced__container--advanced,
+.projects-section .project__advanced-right__container--advanced,
+.projects-section .project__advanced-right__advanced__container--advanced {
+  justify-content: flex-end;
 }
 .projects-section .project-right__container, .projects-section .project-right__container--advanced, .projects-section .project-right__advanced__container, .projects-section .project-right__advanced__container--advanced,
 .projects-section .project__advanced-right__container,
@@ -976,6 +986,11 @@ ul {
 .projects-section .project__advanced-right__advanced__demo,
 .projects-section .project__advanced-right__advanced__demo--advanced {
   margin-right: 5rem;
+}
+.projects-section .project-right__description--advanced, .projects-section .project-right__advanced__description--advanced,
+.projects-section .project__advanced-right__description--advanced,
+.projects-section .project__advanced-right__advanced__description--advanced {
+  text-align: justify;
 }
 .projects-section .project-right__description, .projects-section .project-right__description--advanced, .projects-section .project-right__advanced__description, .projects-section .project-right__advanced__description--advanced,
 .projects-section .project__advanced-right__description,
@@ -1083,6 +1098,9 @@ ul {
   justify-content: space-between;
   margin-bottom: 5rem;
 }
+.about-section__content--middle {
+  flex-direction: row-reverse;
+}
 .about-section__content--left {
   width: 50%;
 }
@@ -1113,6 +1131,7 @@ ul {
 }
 .about-section__content--left .left-skills .skills {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
 }
@@ -1128,7 +1147,7 @@ ul {
 .about-section__content--left .left-skills .skills .skill-bar {
   width: 80%;
   height: 1rem;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-offset);
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
@@ -1150,6 +1169,15 @@ ul {
 }
 .about-section__content--left .left-skills .skills .skill-bar .inner-illustrator {
   width: 85%;
+}
+.about-section__content--left .left-skills .skills .skill-bar .inner-socketio {
+  width: 50%;
+}
+.about-section__content--left .left-skills .skills .skill-bar .inner-nodejs {
+  width: 40%;
+}
+.about-section__content--left .left-skills .skills .skill-bar .inner-express {
+  width: 40%;
 }
 .about-section__content--left .left-skills .skills .skill-bar-inner {
   height: 5px;
