@@ -237,6 +237,11 @@ ul {
   height: 100%;
 }
 
+.add-width-collage {
+  width: 100vw;
+  height: 10rem;
+}
+
 .upper {
   margin-bottom: -0.5rem;
 }
@@ -374,13 +379,29 @@ ul {
   border-radius: 0.5rem;
   width: 75vw;
 }
+.modal__zoom--content .zoomed-img-collage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.5rem;
+  width: 50vw;
+}
 @media (max-width: 37.5em) {
-  .modal__zoom--content .zoomed-img {
+  .modal__zoom--content .zoomed-img,
+.modal__zoom--content .zoomed-img-collage {
     width: calc(100vw - 5rem);
   }
 }
 @media (min-width: 37.51em) and (max-width: 56.25em) {
-  .modal__zoom--content .zoomed-img {
+  .modal__zoom--content .zoomed-img,
+.modal__zoom--content .zoomed-img-collage {
+    width: calc(100vw - 10rem);
+  }
+}
+@media (min-width: 56.26em) and (max-width: 75em) {
+  .modal__zoom--content .zoomed-img,
+.modal__zoom--content .zoomed-img-collage {
     width: calc(100vw - 10rem);
   }
 }
@@ -1273,6 +1294,11 @@ ul {
   outline: 0.5rem solid var(--color-primary);
   outline-offset: 0.4rem;
   border-radius: 0.5rem;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+.about-section__content--right .collage:hover {
+  transform: rotate(0deg);
 }
 .about-section__content .right-skills {
   width: 100%;

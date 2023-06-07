@@ -379,7 +379,8 @@ dotsContainerAdvanced.addEventListener('click', function (e) {
 var modalContainer = document.querySelector('.modal-container');
 
 var createModal = function createModal(img) {
-  var html = "<div class=\"modal__zoom--content add-width\">\n  <img src=\"".concat(img, "\" alt=\"Zoomed image\" class=\"zoomed-img\" />\n</div>");
+  var className = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'zoomed-img';
+  var html = "<div class=\"modal__zoom--content add-width\">\n  <img src=\"".concat(img, "\" alt=\"Zoomed image\" class=\"").concat(className, "\" />\n</div>");
   modalContainer.insertAdjacentHTML('beforeend', html);
 };
 
@@ -403,6 +404,15 @@ thumbnailsParentDivAdvanced.addEventListener('click', function (e) {
 body.addEventListener('click', function (e) {
   if (!e.target.classList.contains('modal__zoom--content')) return;
   removeModal(modalContainer);
+}); // ------------------------------------------------------------------- //
+// Zoom in collage image
+// ------------------------------------------------------------------- //
+
+var collage = document.querySelector('.collage');
+collage.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('collage')) return;
+  var url = e.target.getAttribute('src');
+  createModal(url, 'zoomed-img-collage');
 }); // ------------------------------------------------------------------- //
 // Scroll to top of the page on refresh
 // ------------------------------------------------------------------- //

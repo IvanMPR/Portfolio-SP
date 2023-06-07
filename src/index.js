@@ -223,9 +223,9 @@ dotsContainerAdvanced.addEventListener('click', function (e) {
 // Open modal to zoom in the thumbnail project picture
 // ------------------------------------------------------------------- //
 const modalContainer = document.querySelector('.modal-container');
-const createModal = function (img) {
+const createModal = function (img, className = 'zoomed-img') {
   const html = `<div class="modal__zoom--content add-width">
-  <img src="${img}" alt="Zoomed image" class="zoomed-img" />
+  <img src="${img}" alt="Zoomed image" class="${className}" />
 </div>`;
   modalContainer.insertAdjacentHTML('beforeend', html);
 };
@@ -253,6 +253,15 @@ thumbnailsParentDivAdvanced.addEventListener('click', function (e) {
 body.addEventListener('click', function (e) {
   if (!e.target.classList.contains('modal__zoom--content')) return;
   removeModal(modalContainer);
+});
+// ------------------------------------------------------------------- //
+// Zoom in collage image
+// ------------------------------------------------------------------- //
+const collage = document.querySelector('.collage');
+collage.addEventListener('click', e => {
+  if (!e.target.classList.contains('collage')) return;
+  const url = e.target.getAttribute('src');
+  createModal(url, 'zoomed-img-collage');
 });
 // ------------------------------------------------------------------- //
 // Scroll to top of the page on refresh
