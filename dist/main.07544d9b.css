@@ -961,11 +961,20 @@ ul {
   transition: all 0.2s;
   position: relative;
 }
+.projects-section .project-left__image-container:hover,
+.projects-section .project__advanced-left__image-container:hover {
+  box-shadow: 0px 1rem 1rem -1rem rgba(13, 43, 90, 0.18);
+}
+.projects-section .project-left__image-container--advanced:hover,
+.projects-section .project__advanced-left__image-container--advanced:hover {
+  box-shadow: 0px 1rem 1rem -1rem rgba(13, 43, 90, 0.18);
+}
 .projects-section .project-left__image, .projects-section .project-left__image--advanced,
 .projects-section .project__advanced-left__image,
 .projects-section .project__advanced-left__image--advanced {
   width: 100%;
   border-radius: 0.5rem;
+  border: 1px solid var(--color-text);
   cursor: pointer;
 }
 .projects-section .project-right,
