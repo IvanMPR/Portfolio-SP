@@ -97,6 +97,28 @@
     transform: translate(0);
   }
 }
+@keyframes up {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(-15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes up {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(-15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
 :root {
   --main-font: "Poppins", sans-serif;
   --font-small: 1.3rem;
@@ -265,6 +287,27 @@ ul {
   border-left: 1px solid var(--color-text);
   border-bottom: 1px solid var(--color-text);
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.scroll-up {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-text);
+  border-radius: 50%;
+  position: relative;
+  animation: up 4s infinite;
+  -webkit-animation: up 4s infinite;
+}
+.scroll-up::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-left: 1px solid var(--color-text);
+  border-top: 1px solid var(--color-text);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .btn {
