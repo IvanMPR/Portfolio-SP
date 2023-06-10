@@ -17,32 +17,35 @@
   display: none;
 
   &__link-container {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
+    position: relative;
     display: grid;
     place-content: center;
+    transition: all 0.2s;
+    padding-bottom: 1rem;
+  }
+
+  &__link-container:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.2s;
+    border-bottom: 0.5rem solid var(--color-primary);
+    transform-origin: left;
+    transform: scale(0);
+  }
+
+  &__link-container:hover::before {
+    transform: scale(1);
   }
 
   &__a {
     color: var(--color-text);
     font-size: var(--font-normal);
-    transition: color 0.2s;
+    transition: all 0.2s;
   }
 
-  // &__a:link,
-  // &__a:active {
-  //   color: var(--color-text);
-  //   transition: color 0.2s;
-  // }
-
-  &__a:hover {
-    color: var(--color-primary);
-  }
-  // &__a i {
-  //   font-size: var(--font-l);
-  // }
-
+  // -----------------------------------------------//
   @include respond(phone) {
     & {
       display: flex;

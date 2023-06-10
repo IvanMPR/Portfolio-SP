@@ -317,3 +317,7 @@ const aboutOptions = {
 };
 const aboutObserver = new IntersectionObserver(aboutCallback, aboutOptions);
 aboutObserver.observe(aboutSection);
+
+function test() {
+  console.log('test after form submit');
+}

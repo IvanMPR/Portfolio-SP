@@ -13,7 +13,7 @@
 
 [data-theme=dark] {
   --color-bg: #0e141b;
-  --color-bg-offset: #252526;
+  --color-bg-offset: #32323f;
   --color-text: #ffffff;
   --color-text-offset: #818a91;
   --color-border: #2d2d2d;
@@ -345,19 +345,29 @@ ul {
   display: none;
 }
 .top-menu__link-container {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
+  position: relative;
   display: grid;
   place-content: center;
+  transition: all 0.2s;
+  padding-bottom: 1rem;
+}
+.top-menu__link-container:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.2s;
+  border-bottom: 0.5rem solid var(--color-primary);
+  transform-origin: left;
+  transform: scale(0);
+}
+.top-menu__link-container:hover::before {
+  transform: scale(1);
 }
 .top-menu__a {
   color: var(--color-text);
   font-size: var(--font-normal);
-  transition: color 0.2s;
-}
-.top-menu__a:hover {
-  color: var(--color-primary);
+  transition: all 0.2s;
 }
 @media (max-width: 37.5em) {
   .top-menu {
