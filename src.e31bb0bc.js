@@ -289,69 +289,89 @@ var images = document.querySelectorAll('.project');
 var rightArrow = document.querySelector('.frame-arrow__right');
 var leftArrow = document.querySelector('.frame-arrow__left');
 var dotsContainer = document.querySelector('.dots-container');
+var imagesAdvanced = document.querySelectorAll('.project__advanced');
+var rightArrowAdvanced = document.querySelector('.frame-arrow__right--advanced');
+var leftArrowAdvanced = document.querySelector('.frame-arrow__left--advanced');
+var dotsContainerAdvanced = document.querySelector('.dots-container__advanced');
 var data = {
   currentImage: 0,
-  threshold: images.length - 1
+  currentImageAdvanced: 0,
+  threshold: images.length - 1,
+  thresholdAdvanced: imagesAdvanced.length - 1
 };
 
-function goToImage(imageNum) {
-  images.forEach(function (img, i) {
+function goToImage(projectsArray, imageNum) {
+  projectsArray.forEach(function (img, i) {
     return img.style.transform = "translateX(".concat(100 * (i - imageNum), "%");
   });
 }
 
-goToImage(0); //  create dots under projects container
+goToImage(images, 0);
+goToImage(imagesAdvanced, 0); //  create dots under projects container
 
-function createDots() {
-  images.forEach(function (image, i) {
-    var html = "<span class=\"dot\" data-image=\"".concat(i, "\"></span>");
-    dotsContainer.insertAdjacentHTML('beforeend', html);
+function createDots(projectsArray, dotType, dotsContainerName) {
+  projectsArray.forEach(function (_, i) {
+    var html = "<span class=\"".concat(dotType, "\" data-image=\"").concat(i, "\"></span>");
+    dotsContainerName.insertAdjacentHTML('beforeend', html);
   });
 }
 
-createDots(); // Add active class to current dot
+createDots(images, 'dot', dotsContainer);
+createDots(imagesAdvanced, 'dot__advanced', dotsContainerAdvanced); // Add active class to current dot
 
-function activateDot(currSlide) {
-  document.querySelectorAll('.dot').forEach(function (dot) {
+function activateDot(currSlide, dotType) {
+  document.querySelectorAll(".".concat(dotType)).forEach(function (dot) {
     return dot.classList.remove('dot-active');
   });
-  document.querySelector(".dot[data-image=\"".concat(currSlide, "\"]")).classList.add('dot-active');
+  document.querySelector(".".concat(dotType, "[data-image=\"").concat(currSlide, "\"]")).classList.add('dot-active');
 }
 
-activateDot(0);
+activateDot(0, 'dot');
+activateDot(0, 'dot__advanced');
 
-function moveRight() {
-  if (data.currentImage === data.threshold) {
-    data.currentImage = 0;
+function moveRight(e) {
+  if (!e.target.classList.contains('right-advanced')) {
+    data.currentImage === data.threshold ? data.currentImage = 0 : data.currentImage++;
+    activateDot(data.currentImage, 'dot');
+    goToImage(images, data.currentImage);
   } else {
-    data.currentImage++;
+    data.currentImageAdvanced === data.thresholdAdvanced ? data.currentImageAdvanced = 0 : data.currentImageAdvanced++;
+    activateDot(data.currentImageAdvanced, 'dot__advanced');
+    goToImage(imagesAdvanced, data.currentImageAdvanced);
   }
-
-  activateDot(data.currentImage);
-  goToImage(data.currentImage);
 }
 
-function moveLeft() {
-  if (data.currentImage === 0) {
-    data.currentImage = data.threshold;
+function moveLeft(e) {
+  if (!e.target.classList.contains('left-advanced')) {
+    data.currentImage === 0 ? data.currentImage = data.threshold : data.currentImage--;
+    activateDot(data.currentImage, 'dot');
+    goToImage(images, data.currentImage);
   } else {
-    data.currentImage--;
+    data.currentImageAdvanced === 0 ? data.currentImageAdvanced = data.thresholdAdvanced : data.currentImageAdvanced--;
+    activateDot(data.currentImageAdvanced, 'dot__advanced');
+    goToImage(imagesAdvanced, data.currentImageAdvanced);
   }
-
-  activateDot(data.currentImage);
-  goToImage(data.currentImage);
 } // browse trough projects
 
 
 rightArrow.addEventListener('click', moveRight);
-leftArrow.addEventListener('click', moveLeft); // go to specific project by clicking on the dot
+rightArrowAdvanced.addEventListener('click', moveRight);
+leftArrow.addEventListener('click', moveLeft);
+leftArrowAdvanced.addEventListener('click', moveLeft); // go to specific project by clicking on the dot REFACTOR
 
 dotsContainer.addEventListener('click', function (e) {
   if (!e.target.classList.contains('dot')) return;
   var imgNumber = e.target.dataset.image;
   data.currentImage = Number(imgNumber);
-  activateDot(imgNumber);
-  goToImage(imgNumber);
+  activateDot(imgNumber, 'dot');
+  goToImage(images, imgNumber);
+});
+dotsContainerAdvanced.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('dot__advanced')) return;
+  var imgNumber = e.target.dataset.image;
+  data.currentImageAdvanced = Number(imgNumber);
+  activateDot(imgNumber, 'dot__advanced');
+  goToImage(imagesAdvanced, imgNumber);
 }); // ------------------------------------------------------------------- //
 // Open modal to zoom in the thumbnail project picture
 // ------------------------------------------------------------------- //
@@ -359,7 +379,8 @@ dotsContainer.addEventListener('click', function (e) {
 var modalContainer = document.querySelector('.modal-container');
 
 var createModal = function createModal(img) {
-  var html = "<div class=\"modal__zoom--content add-width\">\n  <img src=\"".concat(img, "\" alt=\"Zoomed image\" class=\"zoomed-img\" />\n</div>");
+  var className = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'zoomed-img';
+  var html = "<div class=\"modal__zoom--content add-width\">\n  <img src=\"".concat(img, "\" alt=\"Zoomed image\" class=\"").concat(className, "\" />\n</div>");
   modalContainer.insertAdjacentHTML('beforeend', html);
 };
 
@@ -368,8 +389,14 @@ var removeModal = function removeModal(el) {
 };
 
 var thumbnailsParentDiv = document.querySelector('.frame');
+var thumbnailsParentDivAdvanced = document.querySelector('.frame__advanced');
 thumbnailsParentDiv.addEventListener('click', function (e) {
   if (!e.target.classList.contains('project-left__image')) return;
+  var url = e.target.getAttribute('src');
+  createModal(url);
+});
+thumbnailsParentDivAdvanced.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('project-left__image--advanced')) return;
   var url = e.target.getAttribute('src');
   createModal(url);
 }); // close zoomed thumbnail
@@ -377,6 +404,15 @@ thumbnailsParentDiv.addEventListener('click', function (e) {
 body.addEventListener('click', function (e) {
   if (!e.target.classList.contains('modal__zoom--content')) return;
   removeModal(modalContainer);
+}); // ------------------------------------------------------------------- //
+// Zoom in collage image
+// ------------------------------------------------------------------- //
+
+var collage = document.querySelector('.collage');
+collage.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('collage')) return;
+  var url = e.target.getAttribute('src');
+  createModal(url, 'zoomed-img-collage');
 }); // ------------------------------------------------------------------- //
 // Scroll to top of the page on refresh
 // ------------------------------------------------------------------- //
@@ -403,7 +439,8 @@ homeObserver.observe(homeSection); // projects section -------------------------
 
 var projectsOptions = {
   root: null,
-  threshold: 0.9
+  // changed from 0.9 to 0.5 to make the projects section appear earlier
+  threshold: 0.5
 };
 var projectsObserver = new IntersectionObserver(_intersectionObservers.projectsCallback, projectsOptions);
 projectsObserver.observe(projectsSection); // contact section -----------------------------------------------------//
@@ -421,6 +458,10 @@ var aboutOptions = {
 };
 var aboutObserver = new IntersectionObserver(_intersectionObservers.aboutCallback, aboutOptions);
 aboutObserver.observe(aboutSection);
+
+function test() {
+  console.log('test after form submit');
+}
 },{"./js modules/intersectionObservers.js":"js modules/intersectionObservers.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -449,7 +490,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58337" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54775" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
