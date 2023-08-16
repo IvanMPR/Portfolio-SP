@@ -11,8 +11,9 @@
   "license": "ISC",
   "homepage": "https://ivanmpr.github.io/Portfolio-SP",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.3",
     "gh-pages": "^4.0.0",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.9.3",
     "sass": "^1.52.1"
   }
 }
